@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="bieudo.css" />
+      </head>
+  <script
+    type="text/javascript"
+    src="https://www.gstatic.com/charts/loader.js"
+  ></script>
+
+  <body>
+    <div
+      id="myChart"
+      style="width: 100%; max-width: 600px; height: 500px"
+    ></div>
+
+    <script>
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Contry", "Số lượng sản phẩm được đặt nhiều nhất"],
+          ["iphone 12promax", 55],
+          ["iphone 13promax", 49],
+          ["iphone 14promax", 44],
+          ["iphone 11promax", 24],
+          ["iphone Xsm", 15],
+        ]);
+
+        var options = {
+          title: "Biểu đồ phone được đặt nhiều nhất",
+        };
+
+        var chart = new google.visualization.BarChart(
+          document.getElementById("myChart")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+  </body>
+</html>

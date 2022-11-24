@@ -27,4 +27,7 @@
         </tbody>
     </table>
     <a href="index.php?act=bieudo"><button>Biểu đồ</button></a>
+    <a href="index.php?act=sl_donhang"><button>Số lượng đơn hàng trong tuần</button></a>
+    <a href="index.php?act=top_sp_buy"><button>Sản phẩm được đặt nhiều nhất</button></a>
+    <a href="index.php?act=tk_doanhthu"><button>Doanh thu</button></a>
 </div>

@@ -182,6 +182,15 @@
                 $listtk = loadall_thongke();
                 include 'thongke/bieudo.php';
                 break;
+            case 'sl_donhang':
+                include 'thongke/bieudo_sl.html';
+                break;
+            case 'top_sp_buy':
+                include 'thongke/bieudo_dn.html';
+                break;
+            case 'tk_doanhthu':
+                include 'thongke/bieudo_dt.html';
+                break;
             default:
             header("Location:index.php?act=listdh");
                 break;
