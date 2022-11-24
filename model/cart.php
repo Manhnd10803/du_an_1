@@ -16,7 +16,7 @@
         if(isset($kyw) && $kyw!=""){
             $sql = "select * from bill where id =".$kyw;
         }else{
-            $sql = "select * from bill";
+            $sql = "select * from bill order by bill_ngay_dat desc";
         }
         $bill = pdo_query($sql);
         return $bill;

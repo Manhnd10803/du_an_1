@@ -5,19 +5,37 @@
   </head>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <body>
-    <canvas id="myChart" style="width: 100%; max-width: 600px"></canvas>
+    <canvas id="myChart" style="width: 100%; max-width: 800px;"></canvas>
 
     <script>
       var xValues = [
-        "Thứ Hai",
-        "Thứ Ba",
-        "Thứ Tư",
-        "Thứ Năm",
-        "Thứ Sáu",
-        "Thứ Bảy",
-        "Chủ Nhật",
+        <?php 
+        $i=0;
+          foreach (array_count_values($sl_theo_ngay) as $key => $value){
+        ?>
+        "<?php echo $key?>",
+        <?php
+          if($i==6){
+            break;
+          }
+          $i++;
+          }
+        ?>
       ];
-      var yValues = [55, 49, 44, 24, 15, 34, 12];
+      var yValues = [
+        <?php 
+          $y=0;
+          foreach (array_count_values($sl_theo_ngay) as $key => $value){
+        ?>
+        "<?php echo $value?>",
+        <?php
+          if($y==6){
+            break;
+          }
+          $y++;
+          }
+        ?>
+      ];
       var barColors = [
         "red",
         "green",

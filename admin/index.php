@@ -183,7 +183,12 @@
                 include 'thongke/bieudo.php';
                 break;
             case 'sl_donhang':
-                include 'thongke/bieudo_sl.html';
+                $all_bill = loadall_bill("");
+                $sl_theo_ngay = [];
+                foreach($all_bill as $all_bill){
+                    array_push($sl_theo_ngay, $all_bill['bill_ngay_dat']);
+                }
+                include 'thongke/bieudo_sl.php';
                 break;
             case 'top_sp_buy':
                 include 'thongke/bieudo_dn.html';
