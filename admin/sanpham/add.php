@@ -1,6 +1,7 @@
-<div class="noidung">
+<div class="body">
     <form action="index.php?act=addsp" method="post" enctype="multipart/form-data">
         <h3>Thêm sản phẩm</h3>
+        <div class="cover">
         <label for="">Tên sản phẩm</label>
         <input type="text" name="tensp" required>
         <label for="">Giá sản phẩm</label>
@@ -22,7 +23,7 @@
         </select>
         <label for="">Mô tả</label>
         <textarea name="mota" cols="30" rows="10" required></textarea>
-        <div class="luachon">
+        <div class="funtion-button">
             <input type="submit" name="themmoi" value="Thêm mới" class="button">
             <input type="reset" value="Nhập lại" class="button">
             <a href="index.php?act=listsp"><input type="button" value="Danh sách" class="button"></a>
@@ -34,5 +35,7 @@
             }
         ?>
         </p>
+        </div>
+        
     </form>
 </div>

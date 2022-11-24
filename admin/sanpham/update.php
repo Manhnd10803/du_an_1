@@ -1,6 +1,7 @@
-<div class="noidung">
+<div class="body">
     <form action="index.php?act=updatesp" method="post" enctype="multipart/form-data">
         <h3>Sửa sản phẩm</h3>
+        <div class="cover">
         <label for="">Mã sản phẩm</label>
         <input type="text" name="masp" value="<?php echo $sanpham['ma_sp']?>" required>
         <label for="">Tên sản phẩm</label>
@@ -26,7 +27,7 @@
         </select>
         <label for="">Mô tả</label>
         <textarea name="mota" cols="30" rows="10" required ><?php echo $sanpham['mo_ta_sp']?></textarea>
-        <div class="luachon">
+        <div class="funtion-button">
             <input type="submit" name="capnhat" value="Cập nhật" class="button">
             <input type="reset" value="Nhập lại" class="button">
             <a href="index.php?act=listsp"><input type="button" value="Danh sách" class="button"></a>
@@ -38,6 +39,7 @@
             }
         ?>
         </p>
+        </div>
     </form>
 </div>
 

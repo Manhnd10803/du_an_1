@@ -195,6 +195,7 @@ table tbody td img{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     /* background-color: white; */
 }
+
 .body .cover{
     display: flex;
     flex-direction: column;
