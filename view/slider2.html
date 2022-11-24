@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/3c4fa98e07.js" crossorigin="anonymous"></script>
+    <style>
+        img{
+            width: 100%;
+            height: 280px;
+            transition: all ease;
+        }
+        .anhtiep{
+            border: 1px solid white;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            font-size: 20px;
+            color: #FE0000;
+            position: relative;
+            top: -150px;
+            left: 825px;
+        }
+        .anhtruoc{
+            border: 1px solid white;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            font-size: 20px;
+            color: #FE0000;
+            position: relative;
+            top: -150px;
+            left: -20px;
+        }
+        ::-webkit-scrollbar{
+            display: none;
+        }
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+    </style>
+    <script>
+        var img = [], i=0, time;
+        img[0] = "image/banner1.jpg";
+        img[1] = "image/banner2.jpg";
+        img[2] = "image/banner3.jpg";
+        img[3] = "image/banner4.jpg";
+        img[4] = "image/banner5.jpg";
+        window.onload = function auto(){
+            // time = setTimeout(chay,1);
+        }
+        function chay(){
+            i++;
+            if(i==5){
+                i=0;
+            }
+            document.getElementById("slide").src = img[i];
+            time = setTimeout(chay, 2000);
+        }
+        function anhtiep(){
+            clearTimeout(time);
+            i++;
+            if(i==5){
+                i=0;
+            }
+            document.getElementById("slide").src=img[i];
+        } 
+        function anhtruoc(){
+            clearTimeout(time);
+            i--;
+            if(i==-1){
+                i=4;
+            }
+            document.getElementById("slide").src = img[i]
+        }
+    </script>
+</head>
+<body>
+    <img src="image/banner1.jpg" alt="" id="slide" class="fade">
+    <button onclick="anhtruoc()" class="anhtruoc"><i class="fa-solid fa-angles-left"></i></button>
+    <button onclick="anhtiep()" class="anhtiep"><i class="fa-solid fa-angles-right"></i></button>
+</body>
+</html>
+

@@ -1,0 +1,78 @@
+header{
+    display: flex;
+    justify-content: space-between;
+}
+.dangnhap{
+    width: 600px;
+    /* height: 585px; */
+    /* border: 1px solid black; */
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px #CCCCCC;
+    margin:3% 34%;
+}
+.dangnhap .A{
+    padding: 30px 130px;
+    display: flex;
+    justify-content: space-between;
+}
+.dangnhap .A .chon{
+    color: #EE1E25;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #EE1E25;
+}
+.dangnhap .A a:hover{
+    color: #EE1E25;
+}
+.dangnhap .B form{
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+}
+.dangnhap .B form input{
+    height: 42px;
+    width: 480px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+.dangnhap .C{
+    margin: 0 10%;
+    display: flex;
+    justify-content: space-between;
+}
+.dangnhap .C a:hover{
+    color: #EE1E25;
+    text-decoration: underline;
+}
+.dangnhap .D{
+    margin-top: 10px;
+}
+.dangnhap .D input{
+    width: 480px;
+    height: 80px;
+    font-size: 20px;
+    color: white;
+    background-color: #ED3324;
+    border: 1px solid #ED3324;
+    border-radius: 6px;
+    margin-bottom: 40px;
+}
+.dangnhap .D input:hover{
+    background-color: #F15F53;
+}
+.thanhcong{
+    color: green;
+    font-size: 18px;
+    /* margin-top: 10px; */
+    margin-left: 60px;
+    padding-bottom: 10px;
+}
+.kothanhcong{
+    color: #EE1E25;
+    font-size: 18px;
+    margin-top: -5px;
+    margin-left: 60px;
+    padding-bottom: 10px;
+}
+

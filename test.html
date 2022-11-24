@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        nav {
+            /* canh giữa cách lề mỗi bên 10% */
+            margin: 5px 10%;
+        }
+
+        nav {
+            background: #484848;
+            /*tô màu cho menu cha*/
+            border-radius: 5px;
+            /* bo góc */
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav>ul li {
+            list-style: none;
+            /* bỏ dấu chấm mặc định của li */
+            /* kẻ đường bên trái và bên phải của li */
+            border-right: 1px solid #ccc;
+            border-left: 1px solid #333;
+        }
+
+        nav>ul li a {
+            display: block;
+            padding: 0 25px;
+            line-height: 50px;
+            color: #f1f2f3;
+            text-decoration: none;
+        }
+
+        nav ul li:first-child {
+            border-left: none;
+            /* bỏ đường kè trái của phần tử đầu tiên */
+        }
+
+        nav>ul li:first-child a {
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+
+        /* Khi hover đến li, tô màu cho thẻ a */
+        nav ul li:hover>a {
+            background: red;
+            opacity: .7;
+            color: yellow;
+        }
+
+        /*menu con*/
+        /*Ẩn các menu con cấp 1,2,3*/
+        nav li ul {
+            display: none;
+            min-width: 350px;
+            position: absolute;
+        }
+
+        nav li>ul li {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            background: #999;
+            text-align: left;
+        }
+
+        nav li>ul li:first-child a {
+            border-bottom-left-radius: 0px;
+            border-top-left-radius: 0px;
+        }
+
+        nav li>ul li:last-child {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        nav li>ul li:last-child a {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        /*khi hover thì hiện menu con*/
+        nav li:hover>ul {
+            display: block;
+        }
+
+        /*Hiển thị menu con cấp 2,3,4 bên cạnh phải*/
+        nav>ul li>ul li>ul {
+            margin-left: 352px;
+            margin-top: -50px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a href="">3</a>
+                <ul>
+                    <li><a href="">a</a></li>
+                    <li><a href="">b</a></li>
+                    <li><a href="">c</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>
+
+
+ul {
+	/* Font & Text */
+	font-family: Roboto, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	letter-spacing: normal;
+	line-height: normal;
+	text-decoration: none solid rgb(0, 0, 0);
+	text-align: center;
+	text-indent: 0px;
+	text-transform: none;
+	vertical-align: baseline;
+	white-space: normal;
+	word-spacing: 0px;
+
+	/* Color & Background */
+	background-attachment: scroll;
+	background-color: rgba(0, 0, 0, 0);
+	background-image: none;
+	background-position: 0% 0%;
+	background-repeat: repeat;
+	color: rgb(0, 0, 0);
+
+	/* Box */
+	height: 111px;
+	width: 200px;
+	border: 0px none rgb(0, 0, 0);
+	border-top: 0px none rgb(0, 0, 0);
+	border-right: 0px none rgb(0, 0, 0);
+	border-bottom: 0px none rgb(0, 0, 0);
+	border-left: 0px none rgb(0, 0, 0);
+	margin: 0px;
+	padding: 0px;
+	max-height: none;
+	min-height: 0px;
+	max-width: none;
+	min-width: 0px;
+
+	/* Positioning */
+	position: static;
+	top: auto;
+	bottom: auto;
+	right: auto;
+	left: auto;
+	float: none;
+	display: block;
+	clear: none;
+	z-index: auto;
+
+	/* List */
+	list-style-image: none;
+	list-style-type: none;
+	list-style-position: outside;
+
+	/* Table */
+	border-collapse: separate;
+	border-spacing: 0px 0px;
+	caption-side: top;
+	empty-cells: show;
+	table-layout: auto;
+
+	/* Miscellaneous */
+	overflow: hidden;
+	cursor: auto;
+	visibility: visible;
+
+	/* Effects */
+	transform: none;
+	transition: all 0s ease 0s;
+	outline: rgb(255, 0, 0) dashed 1px;
+	outline-offset: 0px;
+	box-sizing: border-box;
+	resize: none;
+	text-shadow: none;
+	text-overflow: clip;
+	word-wrap: normal;
+	box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 4px 0px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
