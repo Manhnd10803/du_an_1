@@ -5,20 +5,26 @@
   </head>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <body>
-    <canvas id="myChart" style="width: 100%; max-width: 600px"></canvas>
+    <canvas id="myChart" style="width: 100%; max-width: 800px;"></canvas>
 
     <script>
       var xValues = [
-        "Thứ Hai",
-        "Thứ Ba",
-        "Thứ Tư",
-        "Thứ Năm",
-        "Thứ Sáu",
-        "Thứ Bảy",
-        "Chủ Nhật",
+        <?php 
+          foreach ($ngay as $ngay){
+        ?>
+        "<?php echo $ngay?>",
+        <?php
+          }
+        ?>
       ];
       var yValues = [
-        500000, 1000000, 2000000, 2300000, 5000000, 4300000, 1000000,
+        <?php 
+          foreach ($tong as $tong){
+        ?>
+        "<?php echo $tong?>", 
+        <?php
+          }
+        ?>
       ];
       var barColors = [
         "red",
@@ -45,7 +51,7 @@
           legend: { display: false },
           title: {
             display: true,
-            text: "Biểu đồ thống kê doanh thu theo tuần",
+            text: "Doanh thu theo tuần (VNĐ)",
           },
         },
       });

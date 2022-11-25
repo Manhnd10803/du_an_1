@@ -61,7 +61,7 @@
           legend: { display: false },
           title: {
             display: true,
-            text: "Biểu đồ thống kê số lượng đơn hàng theo tuần",
+            text: "Số lượng đơn hàng theo tuần",
           },
         },
       });
