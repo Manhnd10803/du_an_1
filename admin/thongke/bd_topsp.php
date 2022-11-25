@@ -11,7 +11,7 @@
   <body>
     <div
       id="myChart"
-      style="width: 100%; max-width: 600px; height: 500px"
+      style="width: 100%; max-width: 600px; height: 500px; display: flex; margin: auto;"
     ></div>
 
     <script>
