@@ -11,7 +11,7 @@
   <body>
     <div
       id="myChart"
-      style="width: 100%; max-width: 600px; height: 500px"
+      style="width: 100%; max-width: 600px; height: 500px; display: flex; margin: auto;"
     ></div>
 
     <script>
@@ -20,16 +20,18 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ["Contry", "Số lượng sản phẩm được đặt nhiều nhất"],
-          ["iphone 12promax", 55],
-          ["iphone 13promax", 49],
-          ["iphone 14promax", 44],
-          ["iphone 11promax", 24],
-          ["iphone Xsm", 15],
+          ["Contry", "Số lượng"],
+          <?php
+            foreach ($top_buy_sp as $top){
+          ?>
+          ["<?php echo $top["ten_sp"]?>", <?php echo $top["sl_sp"]?>],
+          <?php
+            }
+          ?>
         ]);
 
         var options = {
-          title: "Biểu đồ phone được đặt nhiều nhất",
+          title: "Sản phẩm được đặt nhiều nhất",
         };
 
         var chart = new google.visualization.BarChart(

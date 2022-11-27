@@ -16,8 +16,13 @@
         if(isset($kyw) && $kyw!=""){
             $sql = "select * from bill where id =".$kyw;
         }else{
-            $sql = "select * from bill";
+            $sql = "select * from bill order by id desc";
         }
+        $bill = pdo_query($sql);
+        return $bill;
+    }
+    function loadall_bill_2(){
+        $sql = "select * from bill order by bill_ngay_dat desc";
         $bill = pdo_query($sql);
         return $bill;
     }
@@ -45,10 +50,5 @@
     function update_bill($tenkh, $sdt, $diachi, $giatri, $ttdh, $id){
         $sql = "UPDATE `bill` SET `bill_ho_ten` = '$tenkh', `bill_dia_chi` = '$diachi', `bill_sdt` = '$sdt', `bill_tong_tien` = '$giatri', `bill_trang_thai` = '$ttdh' WHERE `bill`.`id` = {$id}";
         pdo_execute($sql);
-    }
-    function loadall_thongke(){
-        $sql = "SELECT type.ma_loai AS maloai, type.ten_loai AS tenloai, COUNT(product.ma_sp) AS countsp, MIN(product.gia_sp) AS minsp, MAX(product.gia_sp) AS maxsp, AVG(product.gia_sp) AS avgsp FROM product LEFT JOIN type ON type.ma_loai = product.ma_loai GROUP BY type.ma_loai ORDER BY type.ma_loai DESC;";
-        $listtk = pdo_query($sql);
-        return $listtk;
     }
 ?>

@@ -5,6 +5,7 @@
     include "../model/sanpham.php";
     include "../model/taikhoan.php";
     include "../model/cart.php";
+    include "../model/thongke.php";
     include "../global.php";
     //controler
     if(isset($_GET['act'])){
@@ -183,13 +184,31 @@
                 include 'thongke/bieudo.php';
                 break;
             case 'sl_donhang':
-                include 'thongke/bieudo_sl.html';
+                $all_bill = loadall_bill_2();
+                $sl_theo_ngay = [];
+                foreach($all_bill as $all_bill){
+                    array_push($sl_theo_ngay, $all_bill['bill_ngay_dat']);
+                }
+                include 'thongke/bd_sl_donhang.php';
                 break;
             case 'top_sp_buy':
-                include 'thongke/bieudo_dn.html';
+                $top_buy_sp = top_sp_buy();
+                include 'thongke/bd_topsp.php';
                 break;
             case 'tk_doanhthu':
-                include 'thongke/bieudo_dt.html';
+                $doanh_thu = doanhthu_ngay();
+                $tong = [];
+                foreach($doanh_thu as $doanh_thu){
+                    // echo $doanh_thu['tong'];
+                    array_push($tong, $doanh_thu['tong']);
+                }
+                $doanh_thu = doanhthu_ngay();
+                $ngay = [];
+                foreach($doanh_thu as $doanh_thu){
+                    // echo $doanh_thu['ngay'];
+                    array_push($ngay, $doanh_thu['ngay']);
+                }
+                include 'thongke/bd_doanhthu.php';
                 break;
             default:
             header("Location:index.php?act=listdh");
@@ -198,6 +217,5 @@
     }else{
         header("Location:index.php?act=listdh");
     }
-    
     include 'footer.php';
 ?>
