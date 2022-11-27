@@ -1,25 +1,5 @@
 
-/* Sửa phần nền cho Danh mục */
 
-
-*{
-    background-color: #F9F9F9;
-}
-
-header{
-    display: flex;
-    justify-content: space-between;
-}
-header a{
-    background-color: #FE0000;
-    color: white;
-}
-header p{
-    background-color: #FE0000;
-    color: white;
-    font-size: 28px;  
-}
-/* End sửa danh mục */
 header{
     display: flex;
     justify-content: space-between;
