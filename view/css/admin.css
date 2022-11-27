@@ -1,5 +1,9 @@
 
-
+/* sửa css */
+    body{
+        background-color: #F9F9F9;
+    }
+/* end sửa css */
 header{
     display: flex;
     justify-content: space-between;
