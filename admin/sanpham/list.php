@@ -17,7 +17,7 @@
     </form>
     <table>
         <thead>
-            <th></th>
+            <th class="border-top-left ml-10"></th>
             <th>MÃ SẢN PHẨM</th>
             <th>TÊN SẢN PHẨM</th>
             <th>ĐƠN GIÁ</th>
@@ -25,7 +25,7 @@
             <th>HÌNH</th>
             <th>NGÀY NHẬP</th>
             <th>SỐ LƯỢT XEM</th>
-            <th>THAO TÁC</th>
+            <th class="border-top-right">THAO TÁC</th>
         </thead>
         <tbody>
             <?php 

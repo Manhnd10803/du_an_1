@@ -2,11 +2,11 @@
     <h3>Danh sách loại sản phẩm</h3>
     <table>
         <thead>
-            <th></th>
+            <th class="border-top-left"></th>
             <th>MÃ LOẠI</th>
             <th>TÊN LOẠI</th>
             <!-- <th>ICON</th> -->
-            <th>THAO TÁC</th>
+            <th class="border-top-right">THAO TÁC</th>
         </thead>
         <tbody>
             <?php 

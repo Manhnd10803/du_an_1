@@ -1,7 +1,7 @@
 <div class="content">
     <h3>Chi tiết đơn hàng</h3>
     <a href="index.php?act=listdh">
-        <h4 class="pb-10 pl-10">
+        <h4 class="pb-10 pl-10 back">
         Trở về
         </h4>
     </a>
