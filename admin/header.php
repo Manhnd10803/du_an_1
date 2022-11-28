@@ -19,12 +19,13 @@
     <div class="boxx">
     </div>
     <div class="container">
-        <header>
-            <a href="../index.php" class="logo">Smobile</a>
-            <p>Quản trị Website</p>
-        </header>
-        
+        <!-- <header>
+            
+        </header> -->
         <nav>
+            <div class="pb-40">
+            <a href="../index.php" class="logo">Smobile</a>
+            </div>
             <div class="B border-top-left border-top-right">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <a href="index.php?act=listdh">Đơn hàng</a>
@@ -37,7 +38,7 @@
             </div>
             <div class="B">
                 <div>
-                <i class="fa-solid fa-parachute-box"></i>
+                <i class="fa-solid fa-mobile-screen"></i>
                 <a href="index.php?act=listsp">Sản phẩm</a>
                 </div>
             </div>
