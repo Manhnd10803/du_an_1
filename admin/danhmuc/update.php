@@ -1,4 +1,4 @@
-<div class="body">
+<div class="body mt-30">
     <form action="index.php?act=updatedm" method="post">
         <h3>Sửa danh mục</h3>
         <div class="cover">
