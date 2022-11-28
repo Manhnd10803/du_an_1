@@ -1,4 +1,4 @@
-<div class="body">
+<div class="body mt-30">
     <form action="index.php?act=adddm" method="post">
         <h3>Thêm danh mục</h3>
         <div class="cover">

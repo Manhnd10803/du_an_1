@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content mt-20">
     <h3>Chi tiết đơn hàng</h3>
     <a href="index.php?act=listdh">
         <h4 class="pb-10 pl-10 back">

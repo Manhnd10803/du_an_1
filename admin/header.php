@@ -16,29 +16,48 @@
     <link rel="stylesheet" href="../view/css/admin.css">
 </head>
 <body>
+    <div class="boxx">
+    </div>
     <div class="container">
         <header>
             <a href="../index.php" class="logo">Smobile</a>
             <p>Quản trị Website</p>
         </header>
+        
         <nav>
-            <div class="B">
+            <div class="B border-top-left border-top-right">
+                <i class="fa-solid fa-cart-shopping"></i>
                 <a href="index.php?act=listdh">Đơn hàng</a>
-            </div> <span>|</span>
+            </div>
             <div class="B">
+                <div>
+                <i class="fa-solid fa-list"></i>
                 <a href="index.php?act=listdm">Danh mục</a>
-            </div> <span>|</span>
+                </div>
+            </div>
             <div class="B">
+                <div>
+                <i class="fa-solid fa-parachute-box"></i>
                 <a href="index.php?act=listsp">Sản phẩm</a>
-            </div> <span>|</span>
+                </div>
+            </div>
             <div class="B">
+                <div>
+                <i class="fa-solid fa-user"></i>
                 <a href="index.php?act=listtk">Khách hàng</a>
-            </div> <span>|</span>
+                </div>
+            </div>
             <div class="B">
+                <div>
+                <i class="fa-solid fa-comment"></i>
                 <a href="index.php?act=listbl">Bình luận</a>
-            </div> <span>|</span>
-            <div class="B">
+                </div>
+            </div>
+            <div class="B border-bt-left border-bt-right">
+                <div>
+                <i class="fa-solid fa-chart-simple"></i>
                 <a href="index.php?act=thongke">Thống kê</a>
+                </div>
             </div>
         </nav>
     

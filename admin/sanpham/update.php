@@ -1,4 +1,5 @@
 <div class="body">
+<div class="boxx-sp"></div>
     <form action="index.php?act=updatesp" method="post" enctype="multipart/form-data">
         <h3>Sửa sản phẩm</h3>
         <div class="cover">
