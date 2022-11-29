@@ -35,7 +35,7 @@ nav{
 nav .B a{
     padding: 0 10px;
     color: white;
-    font-size: 22px;
+    font-size: 18px;
 }
 nav .B i:hover{
     font-weight: bold;

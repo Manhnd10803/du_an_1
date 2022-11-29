@@ -6,6 +6,7 @@
     include "../model/taikhoan.php";
     include "../model/cart.php";
     include "../model/thongke.php";
+    include "../model/binhluan.php";
     include "../global.php";
     //controler
     if(isset($_GET['act'])){
@@ -127,9 +128,18 @@
                 break;
             
             // Controller tai khoan
-            
-            // Controller binh luan
-            
+            //Controller binh luan
+            case 'listbl':
+                $list_bl = show_all_comment();
+                include 'binhluan/list.php';
+                break;
+            case 'xoabl':
+                if(isset($_GET['ma_bl'])){
+                    $ma_bl = $_GET['ma_bl'];
+                    delete_comment($ma_bl);
+                }
+                include 'binhluan/list.php';
+                break;
             
             // Controller đơn hàng
             case 'listdh':

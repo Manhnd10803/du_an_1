@@ -19,8 +19,8 @@
                 <td><input type="checkbox"></td>
                 <td><?php echo $list_bl['ma_bl']?></td>
                 <td><?php echo $list_bl['noi_dung']?></td>
-                <td><?php echo $list_bl['ma_hh']?></td>
-                <td><?php echo $list_bl['ma_kh']?></td>
+                <td><?php echo $list_bl['ma_sp']?></td>
+                <td><?php echo $list_bl['ma_tk']?></td>
                 <td><?php echo $list_bl['ngay_bl']?></td>
                 <td><a href="<?php echo $xoadm?>" onclick="return confirm('Bạn có chắc chắn xóa?')"><button class="delete">Xóa</button></a></td>
             </tr>

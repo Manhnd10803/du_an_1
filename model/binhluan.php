@@ -11,4 +11,12 @@
         $sql = "SELECT * FROM `cart` WHERE `ma_sp` = '{$ma_sp}' and `ma_tk` = '{$ma_tk}'";
         return pdo_query_one($sql);
     }
+    function show_all_comment(){
+        $sql = "SELECT * FROM `commentary`";
+        return pdo_query($sql);
+    }
+    function delete_comment($ma_bl){
+        $sql = " DELETE FROM commentary WHERE `commentary`.`ma_bl` = '{$ma_bl}'";
+        return pdo_execute($sql);
+    }
 ?>
