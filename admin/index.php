@@ -144,8 +144,10 @@
                     $password = $_POST['password'];
                     $name = $_POST['name'];
                     $email = $_POST['email'];
+                    $dia_chi = $_POST['dia_chi'];
+                    $sdt = $_POST['sdt'];
                     $vai_tro = $_POST['vai_tro'];
-                    update_taikhoan($username, $password, $name, $email, $vai_tro);
+                    update_taikhoan($username, $password, $name, $email, $dia_chi, $sdt, $vai_tro);
                 }
                 $list_tk = loadall_tk();
                 include 'taikhoan/list.php';

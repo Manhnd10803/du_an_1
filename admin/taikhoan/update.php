@@ -1,14 +1,31 @@
-<div class="noidung">
+<script>
+    function check() {
+        var pass = document.getElementById("password").value
+        var re_pass = document.getElementById("repassword").value
+        if(pass == re_pass){
+            document.getElementById("baoloi").innerHTML = "";
+        }else{
+            document.getElementById("baoloi").innerHTML = "Không trùng mật khẩu!";
+        }
+    }
+</script>
+<div class="noidung" onchange="check()">
     <form action="index.php?act=updatetk" method="post">
         <h3>Sửa tài khoản</h3>
         <label for="">Tên Đăng Nhập</label>
-        <input type="text" placeholder="Tên đăng nhập" value="<?php echo $taikhoan['ma_tk']?>" name="username" required>
+        <input type="text" placeholder="Tên đăng nhập" value="<?php echo $taikhoan['ma_tk']?>" name="username" disabled>
+        <input type="hidden" placeholder="Tên đăng nhập" value="<?php echo $taikhoan['ma_tk']?>" name="username">
         <label for="">Mật khẩu</label>
-        <input type="text" placeholder="Mật khẩu" name="password" value="<?php echo $taikhoan['mat_khau']?>" required>
+        <input type="text" placeholder="Mật khẩu" name="password" id="password" value="<?php echo $taikhoan['mat_khau']?>" required>
         <label for="">Nhập lại mật khẩu</label>
-        <input type="text" placeholder="Nhập lại mật khẩu" required>
+        <input type="text" placeholder="Nhập lại mật khẩu" name="repassword" id="repassword" required>
+        <p style="color: #EE1E25;" id="baoloi"></p>
         <label for="">Họ và tên</label>
         <input type="text" placeholder="Họ Và Tên" name="name" value="<?php echo $taikhoan['ho_ten']?>" required>
+        <label for="">Địa chỉ</label>
+        <input type="text" placeholder="Địa chỉ" name="dia_chi" value="<?php echo $taikhoan['dia_chi']?>" required>
+        <label for="">Số điện thoại</label>
+        <input type="text" placeholder="Số điện thoại" name="sdt" value="<?php echo $taikhoan['sdt']?>" required>
         <label for="">Email</label>
         <input type="text" placeholder="Email" name="email" value="<?php echo $taikhoan['email']?>" required>
         <label for="">Vai trò</label>

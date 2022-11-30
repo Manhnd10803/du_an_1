@@ -100,14 +100,16 @@
                 include 'view/taikhoan/quenmk.php';
                 break;
             case 'capnhattk':
-                $username = $_SESSION['user']['ma_kh'];
+                $username = $_SESSION['user']['ma_tk'];
                 $taikhoan = loadone_tk($username);
                 if(isset($_POST['submit'])){
                     $username = $_POST['username'];
                     $password = $_POST['password'];
                     $name = $_POST['name'];
+                    $dia_chi = $_POST['dia_chi'];
+                    $sdt = $_POST['sdt'];
                     $email = $_POST['email'];
-                    update_taikhoan($username, $password, $name, $email, '');
+                    update_taikhoan($username, $password, $name, $email, $dia_chi, $sdt, '');
                     $_SESSION['user'] = check_taikhoan($username, $password);
                     $thongbao = "Đã cập nhật thành công!";
                 }
@@ -118,8 +120,10 @@
                     $username = $_POST['username'];
                     $password = $_POST['password'];
                     $name = $_POST['name'];
+                    $dia_chi = $_POST['dia_chi'];
+                    $sdt = $_POST['sdt'];
                     $email = $_POST['email'];
-                    insert_taikhoan($username, $password, $name, $email);
+                    insert_taikhoan($username, $password, $name, $email, $dia_chi, $sdt);
                     $thongbao = "Đã đăng ký thành công!";
                 }
                 include "view/taikhoan/dangky.php";

@@ -6,7 +6,8 @@
             <th>TÊN ĐĂNG NHẬP</th>
             <th>MẬT KHẨU</th>
             <th>HỌ VÀ TÊN</th>
-            <th>HÌNH</th>
+            <th>ĐỊA CHỈ</th>
+            <th>SĐT</th>
             <th>EMAIL</th>
             <th>VAI TRÒ</th>
             <th>THAO TÁC</th>
@@ -22,7 +23,8 @@
                 <td><?php echo $list_tk['ma_tk']?></td>
                 <td><?php echo $list_tk['mat_khau']?></td>
                 <td><?php echo $list_tk['ho_ten']?></td>
-                <td><img src="<?php echo $upload_dir.$list_tk['hinh']?>" alt=""></td>
+                <td><?php echo $list_tk['dia_chi']?></td>
+                <td><?php echo $list_tk['sdt']?></td>
                 <td><?php echo $list_tk['email']?></td>
                 <td><?php if($list_tk['role']==0){echo "Khách hàng";}else if($list_tk['role']==1){echo "Quản trị";}?></td>
                 <td><a href="<?php echo $suatk?>"><button class="update">Sửa</button></a> <a href="<?php echo $xoatk?>" onclick="return confirm('Bạn có chắc chắn xóa?')"><button class="delete">Xóa</button></a></td>

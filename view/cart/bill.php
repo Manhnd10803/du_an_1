@@ -51,11 +51,11 @@
                     <label for="">Họ và tên</label>
                     <input type="text" name="hoten" value="<?php echo $_SESSION['user']['ho_ten']?>" required>
                     <label for="">Địa chỉ</label>
-                    <input type="text" name="diachi" value="" required>
+                    <input type="text" name="diachi" value="<?php echo $_SESSION['user']['dia_chi']?>" required>
                     <label for="">Email</label>
                     <input type="text" name="email" value="<?php echo $_SESSION['user']['email']?>" required>
                     <label for="">Số điện thoại</label>
-                    <input type="text" name="sdt" value="" required>
+                    <input type="text" name="sdt" value="<?php echo $_SESSION['user']['sdt']?>" required>
                 </div>
             </div>
             <div class="phai">

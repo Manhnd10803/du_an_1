@@ -1,6 +1,6 @@
 <?php
-    function insert_taikhoan($username, $password, $name, $email){ //them tài khoản
-        $sql = "INSERT INTO `account` (`ma_tk`, `mat_khau`, `ho_ten`, `email`, `role`) VALUES ('{$username}', '{$password}', '{$name}', '{$email}', '0')";
+    function insert_taikhoan($username, $password, $name, $email, $dia_chi, $sdt){ //them tài khoản
+        $sql = "INSERT INTO `account` (`ma_tk`, `mat_khau`, `ho_ten`, `email`, `dia_chi`, `sdt`, `role`) VALUES ('{$username}', '{$password}', '{$name}','{$email}', '{$dia_chi}', '{$sdt}', '0')";
         pdo_execute($sql);
     }
     function check_taikhoan($username, $password){ //kiểm tra tài khoản để dăng nhập
@@ -23,8 +23,8 @@
         $sql = "SELECT * FROM `account`";
         return pdo_query($sql);
     }
-    function update_taikhoan($username, $password, $name, $email, $vai_tro){ //
-        $sql = "UPDATE `account` SET `mat_khau` = '{$password}', `ho_ten` = '{$name}', `email` = '{$email}'";
+    function update_taikhoan($username, $password, $name, $email, $dia_chi, $sdt, $vai_tro){ //
+        $sql = "UPDATE `account` SET `mat_khau` = '{$password}', `ho_ten` = '{$name}', `email` = '{$email}', `dia_chi` = '{$dia_chi}', `sdt` = '{$sdt}'";
         if(is_numeric($vai_tro)){
             $sql.= ", `role` = '{$vai_tro}'";
         }

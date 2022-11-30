@@ -32,7 +32,7 @@
                 ?>
                     <a href=""><i class="fas fa-user"></i> Xin chào: <?php echo $ma_tk?></a>
                     <ul>
-                        <li><a href="">Cập nhật tài khoản</a></li>
+                        <li><a href="index.php?act=capnhattk">Cập nhật tài khoản</a></li>
                         <li><a href="index.php?act=dangxuat">Đăng xuất</a></li>
                         <?php if($_SESSION['user']['role']==1){
                         ?>

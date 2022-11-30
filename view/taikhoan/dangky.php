@@ -22,6 +22,8 @@
             <p style="color: #EE1E25;" id="baoloi"></p>
             <input type="text" placeholder="Họ Và Tên" name="name" required>
             <input type="email" placeholder="Email" name="email" required>
+            <input type="text" placeholder="Địa chỉ" name="dia_chi" require>
+            <input type="text" placeholder="Số điện thoại" name="sdt" require>
             <div class="D">
                 <a href=""><input type="submit" value="Đăng ký >" name="submit"></a>
             </div>
