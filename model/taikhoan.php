@@ -16,7 +16,7 @@
         pdo_execute($sql);
     }
     function loadone_tk($username){ //load thông tin tài khoản
-        $sql = "SELECT * FROM `account` WHERE `account`.`ma_kh` = '{$username}'";
+        $sql = "SELECT * FROM `account` WHERE `account`.`ma_tk` = '{$username}'";
         return pdo_query_one($sql);
     }
     function loadall_tk(){ //load danh sách tài khoản
@@ -28,11 +28,11 @@
         if(is_numeric($vai_tro)){
             $sql.= ", `role` = '{$vai_tro}'";
         }
-        $sql.= "WHERE `account`.`ma_kh` = '{$username}'";
+        $sql.= "WHERE `account`.`ma_tk` = '{$username}'";
         pdo_execute($sql);
     }
     function delete_taikhoan($id){
-        $sql = "DELETE FROM account WHERE `account`.`ma_kh` = '{$id}'";
+        $sql = "DELETE FROM account WHERE `account`.`ma_tk` = '{$id}'";
         pdo_execute($sql);
     } 
 ?>
