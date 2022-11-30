@@ -17,9 +17,17 @@
     if(isset($_GET['act']) && ($_GET['act']!="")){
         $act = $_GET['act'];
         switch($act){
+            case 'xemdh':
+                if(isset($_GET['id'])){
+                    $id = $_GET['id'];
+                    $dh = loadone_bill($id);
+                    $pro = loadcart_id_bill($id);
+                    include 'view/cart/detail.php';
+                }
+                break;
             case 'mybill':
                 if(isset($_SESSION['user'])){
-                    $listbill = loadbill_user($_SESSION['user']['ma_kh']);
+                    $listbill = loadbill_user($_SESSION['user']['ma_tk']);
                     include 'view/cart/mybill.php';
                 }else{
                     header('Location:index.php?act=dangnhap');
@@ -55,6 +63,7 @@
             case 'delete_cart':
                 if(isset($_GET['id'])){
                     array_splice($_SESSION['mycart'], $_GET['id'], 1);
+                    // array_splice(mảng truyền vào, vị trí pt đầu tiên xóa, số phần từ xóa);
                 }else{
                     $_SESSION['mycart'] = [];
                 }
@@ -63,21 +72,21 @@
             case 'viewcart':
                 include 'view/cart/viewcart.php';
                 break;
-                case 'addtocart':
-                    if(isset($_POST['submit'])&&($_POST['submit'])){
-                        $hinh = $_POST['hinh'];
-                        $ten = $_POST['ten'];
-                        $dongia = $_POST['dongia'];
-                        $soluong = 1;
-                        $thanhtien = $dongia * $soluong;
-                        $ma_hh = $_POST['ma_hh'];
-                        $mau_sac = $_POST['mau_sac'];
-                        $thong_so = $_POST['thong_so'];
-                        $array_pro = [$hinh, $ten, $dongia, $soluong, $thanhtien, $ma_hh, $mau_sac, $thong_so];
-                        array_push($_SESSION['mycart'], $array_pro);
-                    }
-                    include 'view/cart/viewcart.php';
-                    break;
+            case 'addtocart':
+                if(isset($_POST['submit'])&&($_POST['submit'])){
+                    $hinh = $_POST['hinh'];
+                    $ten = $_POST['ten'];
+                    $dongia = $_POST['dongia'];
+                    $soluong = 1;
+                    $thanhtien = $dongia * $soluong;
+                    $ma_hh = $_POST['ma_hh'];
+                    $mau_sac = $_POST['mau_sac'];
+                    $thong_so = $_POST['thong_so'];
+                    $array_pro = [$hinh, $ten, $dongia, $soluong, $thanhtien, $ma_hh, $mau_sac, $thong_so];
+                    array_push($_SESSION['mycart'], $array_pro);
+                }
+                include 'view/cart/viewcart.php';
+                break;
             case 'quantri':
                 header('Location:admin/index.php');
                 break;

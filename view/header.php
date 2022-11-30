@@ -24,7 +24,7 @@
                 <input type="submit" value="Tìm kiếm" class="B">
             </form>
             <a href="index.php?act=viewcart"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a>
-            <a href=""><i class="fas fa-history"></i> Tra cứu đơn hàng</a>
+            <a href="index.php?act=mybill"><i class="fas fa-history"></i> Tra cứu đơn hàng</a>
             <ul>
                 <li>
                 <?php if(isset($_SESSION['user'])){ 
