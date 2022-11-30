@@ -1,5 +1,5 @@
 <div class="content">
-    <h3>Danh sách loại sản phẩm</h3>
+    <h3 class="mb-50">Danh sách loại sản phẩm</h3>
     <table>
         <thead>
             <th class="border-top-left"></th>

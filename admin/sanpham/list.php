@@ -1,4 +1,5 @@
 <div class="content">
+    <div class="boxx-sp"></div>
     <h3>Danh sách sản phẩm</h3>
     <form action="index.php?act=listsp" style="width: 100%;" method="POST">
         <div class="timkiem"  style="display: flex; align-items: center; justify-content: space-around;">

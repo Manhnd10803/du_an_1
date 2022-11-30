@@ -1,3 +1,11 @@
+<?php 
+    session_start();
+    include "../../model/pdo.php";
+    include "../../model/binhluan.php";
+    $ma_sp = $_REQUEST['ma_sp'];
+    // Biến này là một mảng kết hợp, lưu trữ thông tin chứa trong biến $_GET, $_POST và $_COOKIE
+    $list_comment  = show_comment($ma_sp);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,21 +69,59 @@
 <body>
     <div class="container">
         <table>
-            
+            <?php 
+                foreach($list_comment as $comment){
+            ?>
             <tr>
-                <td><i class="fa-solid fa-user"></i> <span>Mã khách hàng</span> <i class="fa-solid fa-calendar-days"></i> <span>Ngày bình luận</span></td>
+                <td><i class="fa-solid fa-user"></i> <span><?php echo $comment['ma_tk']?></span> <i class="fa-solid fa-calendar-days"></i> <span><?php echo $comment['ngay_bl']?></span></td>
             </tr>
             <tr>
-                <td>Nội dung</td>
+                <td><?php echo $comment['noi_dung']?></td>
             </tr>
             <tr>
                 <td><br></td>
             </tr>
-            
+            <?php
+                }
+            ?>
         </table>
     </div>
-    <div class="dangnhap_bl">
-        <p style="color: #EE1E25;">Đăng nhập để bình luận</p>
-    </div>
+    <?php
+        if(isset($_SESSION['user'])){
+            $check_binh_luan = check_binh_luan($_SESSION['user']['ma_tk'], $ma_sp);
+            if(is_array($check_binh_luan)){
+            ?>
+                <form action="<?=$_SERVER['PHP_SELF'];?>" method="post">
+                <!-- $_SERVER['PHP_SELF'] Trả về tên file của file đang được chạy. -->
+                    <input type="hidden" name="ma_sp" value="<?php echo $ma_sp?>">
+                    <input type="text" placeholder="Nhập bình luận" name="noi_dung" style="padding: 20px;">
+                    <input type="submit" name="submit" class="submit">
+                </form>
+            <?php
+            }else {
+            ?>
+                <div class="dangnhap_bl">
+                    <p style="color: #EE1E25;">Mua sản phẩm để bình luận</p>
+                </div>
+            <?php    
+            }
+        }else{
+        ?>
+        <div class="dangnhap_bl">
+            <p style="color: #EE1E25;">Đăng nhập để bình luận</p>
+        </div>
+        <?php
+        }
+    ?>
+    <?php
+        if(isset($_POST['submit']) && $_POST['submit']){
+            $ma_tk = $_SESSION['user']['ma_tk'];
+            $ma_sp = $_POST['ma_sp'];
+            $noi_dung = $_POST['noi_dung'];
+            date_default_timezone_set("Asia/Ho_Chi_Minh");
+            $ngay_binh_luan =  date('d/m/Y');
+            add_comment($noi_dung, $ma_tk, $ngay_binh_luan, $ma_sp);
+        }
+    ?>
 </body>
 </html>

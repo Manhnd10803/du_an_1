@@ -54,7 +54,7 @@
     <div class="spcungloai" style="margin-top: 20px;">
         <p>BÌNH LUẬN</p>
     </div>
-    <iframe src="view/binhluan/binhluan.php?ma_hh=<?php echo $onesp['ma_sp']?>" frameborder="0" style="width: 100%; height: 250px;"></iframe>
+    <iframe src="view/binhluan/binhluan.php?ma_sp=<?php echo $onesp['ma_sp']?>" frameborder="0" style="width: 100%; height: 250px;"></iframe>
 </div>
 <div class="content">
     <div class="topsp spmoi">

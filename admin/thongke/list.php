@@ -1,13 +1,13 @@
 <div class="content">
-    <h3>Thống kê hàng hóa</h3>
+    <h3 class="mb-50">Thống kê hàng hóa</h3>
     <table>
         <thead>
-            <th>MÃ DANH MỤC</th>
+            <th class="border-top-left">MÃ DANH MỤC</th>
             <th>TÊN DANH MỤC</th>
             <th>SỐ LƯỢNG</th>
             <th>GIÁ CAO NHẤT</th>
             <th>GIÁ THẤP NHẤT</th>
-            <th>GIÁ TRUNG BÌNH</th>
+            <th class="border-top-right">GIÁ TRUNG BÌNH</th>
         </thead>
         <tbody>
             <?php 
