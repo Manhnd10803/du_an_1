@@ -13,18 +13,21 @@
                 <th>SỐ LƯỢNG MẶT HÀNG</th>
                 <th>TỔNG GIÁ TRỊ ĐƠN HÀNG</th>
                 <th>TRẠNG THÁI</th>
+                <th></th>
             </thead>
             <tbody>
                 <?php
                 foreach($listbill as $listbill){
                     $soluong = loadall_cart_count($listbill['id']);
+                    $xemdh = "index.php?act=xemdh&id=".$listbill['id'];
                 ?>
                 <tr>
-                    <td><?php echo "DAM-0001".$listbill['id'] ?></td>
-                    <td><?php echo $listbill['ngaydathang']?></td>
+                    <td><?php echo "DA1-0001".$listbill['id'] ?></td>
+                    <td><?php echo $listbill['bill_ngay_dat']?></td>
                     <td><?php echo $soluong?></td>
-                    <td><?php echo $listbill['total']?></td>
-                    <td><?php if($listbill['bill_status']==0){echo "Đơn hàng mới";}else if($listbill['bill_status']==1){echo "Đang xử lý";}else if($listbill['bill_status']==2){echo "Đang giao hàng";}else if($listbill['bill_status']==3){echo "Đã giao hàng";} ?></td>
+                    <td><?php echo $listbill['bill_tong_tien']?></td>
+                    <td><?php if($listbill['bill_trang_thai']==0){echo "Đơn hàng mới";}else if($listbill['bill_trang_thai']==1){echo "Đang xử lý";}else if($listbill['bill_trang_thai']==2){echo "Đang giao hàng";}else if($listbill['bill_trang_thai']==3){echo "Đã giao hàng";} ?></td>
+                    <td><a href="<?php echo $xemdh?>"><button>Xem</button></a></td>
                 </tr>
                 <?php }
                 ?>

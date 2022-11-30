@@ -1,6 +1,6 @@
 <div class="content mt-20">
     <h3>Chi tiết đơn hàng</h3>
-    <a href="index.php?act=listdh">
+    <a href="index.php?act=mybill">
         <h4 class="pb-10 pl-10 back">
         Trở về
         </h4>
@@ -46,7 +46,7 @@
             ?>
             <tr>
                 <td><?php echo $i+1?></td>
-                <td><img src="../<?php echo $pro['hinh_anh_sp']?>" alt="" style="height: 200%;"></td>
+                <td><img src="<?php echo $pro['hinh_anh_sp']?>" alt="" style="height: 200%;"></td>
                 <td><?php echo $pro['ten_sp']?></td>
                 <td><?php echo $pro['gia_sp']?></td>
                 <td><?php echo $pro['so_luong']?></td>
