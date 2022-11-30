@@ -127,7 +127,35 @@
                 break;
             
             // Controller tai khoan
-            
+            case 'listtk':
+                $list_tk = loadall_tk();
+                include 'taikhoan/list.php';
+                break;
+            case 'suatk':
+                $ma_tk = $_GET['id'];
+                $taikhoan = loadone_tk($ma_tk);
+                include 'taikhoan/update.php';
+                break;
+            case 'updatetk':
+                if(isset($_POST['capnhat'])){
+                    $username = $_POST['username'];
+                    $password = $_POST['password'];
+                    $name = $_POST['name'];
+                    $email = $_POST['email'];
+                    $vai_tro = $_POST['vai_tro'];
+                    update_taikhoan($username, $password, $name, $email, $vai_tro);
+                }
+                $list_tk = loadall_tk();
+                include 'taikhoan/list.php';
+                break;
+            case 'xoatk':
+                if(isset($_GET['id'])){
+                    $id = $_GET["id"];
+                    delete_taikhoan($id);
+                }
+                $list_tk = loadall_tk();
+                include 'taikhoan/list.php';
+                break;
             // Controller binh luan
             
             
