@@ -2,13 +2,13 @@
     <h3>Danh sách bình luận</h3>
     <table>
         <thead>
-            <th></th>
+            <th class="border-top-left ml-10"></th>
             <th>MÃ BÌNH LUẬN</th>
             <th>NỘI DUNG</th>
             <th>MÃ HÀNG HÓA</th>
             <th>NGƯỜI BÌNH LUẬN</th>
             <th>NGÀY BÌNH LUẬN</th>
-            <th></th>
+            <th class="border-top-right"></th>
         </thead>
         <tbody>
             <?php 

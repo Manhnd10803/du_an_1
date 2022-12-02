@@ -2,7 +2,7 @@
     <h3>Danh sách tài khoản</h3>
     <table>
         <thead>
-            <th></th>
+            <th class="border-top-left ml-10"></th>
             <th>TÊN ĐĂNG NHẬP</th>
             <th>MẬT KHẨU</th>
             <th>HỌ VÀ TÊN</th>
@@ -10,7 +10,7 @@
             <th>SĐT</th>
             <th>EMAIL</th>
             <th>VAI TRÒ</th>
-            <th>THAO TÁC</th>
+            <th class="border-top-right">THAO TÁC</th>
         </thead>
         <tbody>
             <?php 
