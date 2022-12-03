@@ -15,18 +15,10 @@
             <input type="text" name="giatri" value="<?php echo $dh['bill_tong_tien'] ?>" required>
             <label for="">Tình trạng đơn hàng</label>
             <select name="ttdh" id="">
-                <option value="0" <?php if ($dh['bill_trang_thai'] == 0) {
-                                        echo "selected";
-                                    } ?>>Đơn hàng mới</option>
-                <option value="1" <?php if ($dh['bill_trang_thai'] == 1) {
-                                        echo "selected";
-                                    } ?>>Đang xử lý</option>
-                <option value="2" <?php if ($dh['bill_trang_thai'] == 2) {
-                                        echo "selected";
-                                    } ?>>Đang giao hàng</option>
-                <option value="3" <?php if ($dh['bill_trang_thai'] == 3) {
-                                        echo "selected";
-                                    } ?>>Đã giao hàng</option>
+                <option value="0" <?php if ($dh['bill_trang_thai'] == 0){echo "selected";}?> <?php if($dh['bill_trang_thai']>0){echo "disabled";}?> >Đơn hàng mới</option>
+                <option value="1" <?php if ($dh['bill_trang_thai'] == 1){echo "selected";}?> <?php if($dh['bill_trang_thai']>1){echo "disabled";}?> >Đang xử lý</option>
+                <option value="2" <?php if ($dh['bill_trang_thai'] == 2){echo "selected";}?> <?php if($dh['bill_trang_thai']>2){echo "disabled";}?> >Đang giao hàng</option>
+                <option value="3" <?php if ($dh['bill_trang_thai'] == 3){echo "selected";}?> <?php if($dh['bill_trang_thai']>3){echo "disabled";}?> >Đã giao hàng</option>
             </select>
             <div class="funtion-button">
                 <input type="submit" name="capnhat" value="Cập nhật" class="button">
