@@ -9,9 +9,10 @@
         }
     }
 </script>
-<div class="noidung" onchange="check()">
+<div class="body" onchange="check()">
     <form action="index.php?act=updatetk" method="post">
-        <h3>Sửa tài khoản</h3>
+        <h3 class="mt-20">Sửa tài khoản</h3>
+        <div class="cover">
         <label for="">Tên Đăng Nhập</label>
         <input type="text" placeholder="Tên đăng nhập" value="<?php echo $taikhoan['ma_tk']?>" name="username" disabled>
         <input type="hidden" placeholder="Tên đăng nhập" value="<?php echo $taikhoan['ma_tk']?>" name="username">
@@ -30,8 +31,7 @@
         <input type="text" placeholder="Email" name="email" value="<?php echo $taikhoan['email']?>" required>
         <label for="">Vai trò</label>
         <input type="text" placeholder="Vai trò" name="vai_tro" value="<?php echo $taikhoan['role']?>" required>
-
-        <div class="luachon">
+        <div class="funtion-button">
             <input type="submit" name="capnhat" value="Cập nhật" class="button">
             <input type="reset" value="Nhập lại" class="button">
             <a href="index.php?act=listtk"><input type="button" value="Danh sách" class="button"></a>
@@ -44,5 +44,7 @@
             }
         ?>
         </p>
+        </div>
+        
     </form>
 </div>
