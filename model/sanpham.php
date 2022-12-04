@@ -56,4 +56,8 @@
         $sql = "UPDATE `product` SET `luot_xem` = `luot_xem` + 1 WHERE `product`.`ma_sp` = {$id}";
         pdo_execute($sql);
     }
+    function show_sp(){    
+        $sql = "SELECT * FROM `product`";
+        return pdo_query($sql);
+    }
 ?>

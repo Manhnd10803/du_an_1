@@ -41,6 +41,10 @@
         $bill = pdo_query($sql);
         return sizeof($bill);
     }
+    function add_bill($tenkh, $sdt, $diachi, $giatri, $ttdh, $ma_tk){
+        $sql = "INSERT INTO `bill` (`bill_ho_ten`, `bill_sdt`, `bill_dia_chi`, `bill_tong_tien`, `bill_trang_thai`, `ma_tk`) VALUES ('$tenkh', '$sdt', '$diachi', '$giatri', '$ttdh', '$ma_tk')";
+        pdo_execute($sql);
+    }
     function delete_bill($id_bill){
         $sql = "DELETE FROM cart WHERE `cart`.`id_bill` = {$id_bill}";
         $sql2 = "DELETE FROM bill WHERE `bill`.`id` = {$id_bill}";

@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     include "../model/pdo.php";
     include 'header.php';
     include "../model/danhmuc.php";
@@ -217,7 +218,69 @@
                 }
                 break;
             case 'themdh':
+                if(isset($_POST['themmoi'])){
+                    $tenkh = $_POST['tenkh'];
+                    $sdt = $_POST['sdt'];
+                    $diachi = $_POST['diachi'];
+                    $giatri = $_POST['giatri'];
+                    $ttdh = $_POST['ttdh'];
+                    $ma_tk = $_SESSION['user']['ma_tk'];
+                    add_bill($tenkh, $sdt, $diachi, $giatri, $ttdh, $ma_tk);
+                    header("Location:index.php?act=listdh");
+                    
+                }
+                $list_sp = show_sp(); 
                 include 'donhang/add.php';
+                break;
+            case 'addtocart':
+                if(isset($_POST['themsp'])&&($_POST['themsp'])){
+                    $hinh = $_POST['hinh'];
+                    $ten = $_POST['ten'];
+                    $dongia = $_POST['dongia'];
+                    $soluong = 1;
+                    $thanhtien = $dongia * $soluong;
+                    $ma_hh = $_POST['ma_hh'];
+                    $mau_sac = $_POST['mau_sac'];
+                    $thong_so = $_POST['thong_so'];
+                    $array_pro = [$hinh, $ten, $dongia, $soluong, $thanhtien, $ma_hh, $mau_sac, $thong_so];
+                    array_push($_SESSION['mycart'], $array_pro);
+                }
+                $list_sp = show_sp(); 
+                include 'donhang/add.php';
+                break;
+            case 'delete_cart':
+                if(isset($_GET['id'])){
+                    array_splice($_SESSION['mycart'], $_GET['id'], 1);
+                    // array_splice(mảng truyền vào, vị trí pt đầu tiên xóa, số phần từ xóa);
+                }else{
+                    $_SESSION['mycart'] = [];
+                }
+                header('Location: index.php?act=addtocart');
+                break;
+            case 'bill':
+                if(isset($_SESSION['user'])){
+                    include 'donhang/bill.php';
+                }
+                break;    
+            case 'billconfirm':
+                if(isset($_POST['submit'])){
+                    $hoten = $_POST['hoten'];
+                    $diachi = $_POST['diachi'];
+                    $email = $_POST['email'];
+                    $sdt = $_POST['sdt'];
+                    date_default_timezone_set("Asia/Ho_Chi_Minh");
+                    $ngaydathang = date('d/m/Y');
+                    $tongdonhang = $_POST['tongtien'];
+                    $pttt = $_POST['thanhtoan'];
+                    $ma_kh = $_SESSION['user']['ma_tk'];
+                    $idbill = insert_bill($ma_kh, $hoten, $diachi, $sdt, $email, $pttt, $ngaydathang, $tongdonhang);
+                    foreach ($_SESSION['mycart'] as $cart){
+                        insert_cart($_SESSION['user']['ma_tk'], $cart[5], $cart[0], $cart[1], $cart[2], $cart[3], $cart[4], $cart[6], $cart[7], $idbill);
+                    }
+                }
+                $bill = loadone_bill($idbill);
+                include 'donhang/billconfirm.php';
+                $_SESSION['mycart'] = [];
                 break;
             // Controller thong ke
             case 'thongke':
