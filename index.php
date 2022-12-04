@@ -178,6 +178,40 @@
                     include "view/home.php";
                 }
                 break;
+            case 'sanphamct_gia1':
+                {
+                    $thong_so = $_GET['thong_so'];
+                    $id = $_GET['id'];
+                    $onesp = sua_sanpham($id);
+                    extract($onesp);
+                    $sp_cl = sanpham_cungloai($id, $ma_loai);
+                    include "view/sanphamct.php";
+                }
+                break;
+            case 'sanphamct_gia2':
+                {
+                    $thong_so = $_GET['thong_so'];
+                    $id = $_GET['id'];
+                    $onesp = sua_sanpham($id);
+                    $onesp['gia_sp']+=500000;
+                    $onesp['giam_gia_sp']+=500000;
+                    extract($onesp);
+                    $sp_cl = sanpham_cungloai($id, $ma_loai);
+                    include "view/sanphamct.php";
+                }
+                break;
+            case 'sanphamct_gia3':
+                {
+                    $thong_so = $_GET['thong_so'];
+                    $id = $_GET['id'];
+                    $onesp = sua_sanpham($id);
+                    $onesp['gia_sp']+=1000000;
+                    $onesp['giam_gia_sp']+=1000000;
+                    extract($onesp);
+                    $sp_cl = sanpham_cungloai($id, $ma_loai);
+                    include "view/sanphamct.php";
+                }
+                break;
             case 'gioithieu':
                 include "view/gioithieu.php";
                 break;

@@ -16,7 +16,6 @@
         <hr>
         <p class="dongia">Giá: <?php echo $onesp['giam_gia_sp']?>đ</p>
         <del class="giamgia"><?php echo $onesp['gia_sp']?>đ</del><br>
-        <a href="">
         <form action="index.php?act=addtocart" method="post">
             <div class="gio_hang_chon_mau">
                 <p>Chọn màu : </p>
@@ -27,25 +26,30 @@
             
             <div class="gio_hang_chon_mau">
                         <p>Chọn bộ nhớ trong : </p>
-                            <input type="radio" name="thong_so" value="Bản 128GB" class="input_mau" required> <label class="mau_label" for="">Bản 128GB</label>
-                            <input type="radio" name="thong_so" value="Bản 256GB"  class="input_mau" required> <label class="mau_label" for="">Bản 256GB</label>
-                            <input type="radio" name="thong_so" value="Bản 512GB" class="input_mau" required> <label class="mau_label" for="">Bản 512GB</label>
+                            <a href="index.php?act=sanphamct_gia1&id=<?php echo $onesp['ma_sp']?>&thong_so=128">
+                                <input type="radio" name="thong_so" value="Bản 128GB" class="input_mau" required <?php if(isset($thong_so) && $thong_so==128){echo "checked";} ?>> <label class="mau_label" for="">Bản 128GB</label>
+                            </a> 
+                            <a href="index.php?act=sanphamct_gia2&id=<?php echo $onesp['ma_sp']?>&thong_so=256">
+                                <input type="radio" name="thong_so" value="Bản 256GB" class="input_mau" required <?php if(isset($thong_so) && $thong_so==256){echo "checked";} ?> > <label class="mau_label" for="">Bản 256GB</label>
+                            </a> 
+                            <a href="index.php?act=sanphamct_gia3&id=<?php echo $onesp['ma_sp']?>&thong_so=512">
+                                <input type="radio" name="thong_so" value="Bản 512GB" class="input_mau" required <?php if(isset($thong_so) && $thong_so==512){echo "checked";} ?> > <label class="mau_label" for="">Bản 512GB</label>
+                            </a>
             </div>
                         
             <button class="muangay">
                 <p style="font-size: 18px; font-weight: bold;">MUA NGAY</p>
                 <p style="font-size: 15px;">Giao hàng tận nơi</p>
             </button>
-        </a>
-        <div class="giohang_mua_ngay">
-                <input type="hidden" value="<?php echo $img_home.$onesp['hinh_anh_sp']?>" name="hinh">
-                <input type="hidden" value="<?php echo $onesp['ten_sp']?>" name="ten">
-                <input type="hidden" value="<?php echo $onesp['giam_gia_sp']?>" name="dongia">
-                <input type="hidden" value="<?php echo $onesp['ma_sp']?>" name="ma_hh">
-                <input onclick="check()" type="submit" value="THÊM VÀO GIỎ HÀNG" class="addtocart" name="submit">
+            <div class="giohang_mua_ngay">
+                    <input type="hidden" value="<?php echo $img_home.$onesp['hinh_anh_sp']?>" name="hinh">
+                    <input type="hidden" value="<?php echo $onesp['ten_sp']?>" name="ten">
+                    <input type="hidden" value="<?php echo $onesp['giam_gia_sp']?>" name="dongia">
+                    <input type="hidden" value="<?php echo $onesp['ma_sp']?>" name="ma_hh">
+                    <input onclick="check()" type="submit" value="THÊM VÀO GIỎ HÀNG" class="addtocart" name="submit">
 
-            <a href=""><button>MUA TRẢ GÓP</button></a>
-        </div>
+                <a href=""><button>MUA TRẢ GÓP</button></a>
+            </div>
         </form>
         <p class="goimua">Gọi đặt ngay <span style="color: #2F80ED;">1800.0000</span> (08h - 21h)</p>
     </div>
