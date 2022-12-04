@@ -1,5 +1,5 @@
 <div class="content">
-    <h3>Cảm ơn quý khách đã đặt hàng!</h3>
+    <h3>Đặt hàng thành công!</h3>
     <div class="spcungloai">
         <p>Thông Tin Đặt Hàng</p>
     </div>
@@ -13,7 +13,7 @@
             <p>Phương thức thanh toán:</p>
         </div>
         <div class="phai">
-            <p>DAM-0001<?php echo $bill['id']?></p>
+            <p>DA1-0001<?php echo $bill['id']?></p>
             <p><?php echo $bill['bill_ho_ten']?></p>
             <p><?php echo $bill['bill_sdt']?></p>
             <p><?php echo $bill['bill_dia_chi']?></p>
@@ -41,7 +41,7 @@
                 ?>
                 <tr>
                     <td><?php echo $i+1?></td>
-                    <td><img src="<?php echo $cart['0']?>" alt="" style="height: 200%;"></td>
+                    <td><img src="../<?php echo $cart['0']?>" alt="" style="height: 200%;"></td>
                     <td><?php echo $cart['1']?></td>
                     <td><?php echo $cart['2']?></td>
                     <td><?php echo $cart['3']?></td>

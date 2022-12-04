@@ -227,22 +227,24 @@
                     $ma_tk = $_SESSION['user']['ma_tk'];
                     add_bill($tenkh, $sdt, $diachi, $giatri, $ttdh, $ma_tk);
                     header("Location:index.php?act=listdh");
-                    
                 }
                 $list_sp = show_sp(); 
                 include 'donhang/add.php';
                 break;
             case 'addtocart':
                 if(isset($_POST['themsp'])&&($_POST['themsp'])){
-                    $hinh = $_POST['hinh'];
-                    $ten = $_POST['ten'];
-                    $dongia = $_POST['dongia'];
+                    $ma_sp = $_POST['id_san_pham'];
+                    // echo $ma_sp;
+                    $tt_san_pham = sua_sanpham($ma_sp);
+                    // var_dump($tt_san_pham);
+                    $hinh = "upload/".$tt_san_pham['hinh_anh_sp'];
+                    $ten = $tt_san_pham['ten_sp'];
+                    $dongia = $tt_san_pham['giam_gia_sp'];
                     $soluong = 1;
                     $thanhtien = $dongia * $soluong;
-                    $ma_hh = $_POST['ma_hh'];
                     $mau_sac = $_POST['mau_sac'];
                     $thong_so = $_POST['thong_so'];
-                    $array_pro = [$hinh, $ten, $dongia, $soluong, $thanhtien, $ma_hh, $mau_sac, $thong_so];
+                    $array_pro = [$hinh, $ten, $dongia, $soluong, $thanhtien, $ma_sp, $mau_sac, $thong_so];
                     array_push($_SESSION['mycart'], $array_pro);
                 }
                 $list_sp = show_sp(); 
@@ -258,9 +260,7 @@
                 header('Location: index.php?act=addtocart');
                 break;
             case 'bill':
-                if(isset($_SESSION['user'])){
                     include 'donhang/bill.php';
-                }
                 break;    
             case 'billconfirm':
                 if(isset($_POST['submit'])){

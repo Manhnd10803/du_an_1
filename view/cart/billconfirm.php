@@ -13,7 +13,7 @@
             <p>Phương thức thanh toán:</p>
         </div>
         <div class="phai">
-            <p>DAM-0001<?php echo $bill['id']?></p>
+            <p>DA1-0001<?php echo $bill['id']?></p>
             <p><?php echo $bill['bill_ho_ten']?></p>
             <p><?php echo $bill['bill_sdt']?></p>
             <p><?php echo $bill['bill_dia_chi']?></p>

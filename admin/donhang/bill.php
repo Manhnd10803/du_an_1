@@ -22,7 +22,7 @@
                         ?>
                         <tr>
                             <td><?php echo $i+1?></td>
-                            <td><img src="<?php echo $cart['0']?>" alt="" style="height: 200%;"></td>
+                            <td><img src="../<?php echo $cart['0']?>" alt="" style="height: 200%;"></td>
                             <td><?php echo $cart['1']?></td>
                             <td><?php echo $cart['2']?></td>
                             <td><?php echo $cart['3']?></td>
@@ -49,13 +49,13 @@
                 </div>
                 <div style="display:flex; flex-direction: column; padding: 10px;">
                     <label for="">Họ và tên</label>
-                    <input type="text" name="hoten" value="<?php echo $_SESSION['user']['ho_ten']?>" required>
+                    <input type="text" name="hoten" value="" required>
                     <label for="">Địa chỉ</label>
-                    <input type="text" name="diachi" value="<?php echo $_SESSION['user']['dia_chi']?>" required>
+                    <input type="text" name="diachi" value="" required>
                     <label for="">Email</label>
-                    <input type="text" name="email" value="<?php echo $_SESSION['user']['email']?>" required>
+                    <input type="text" name="email" value="" required>
                     <label for="">Số điện thoại</label>
-                    <input type="text" name="sdt" value="<?php echo $_SESSION['user']['sdt']?>" required>
+                    <input type="text" name="sdt" value="" required>
                 </div>
             </div>
             <div class="phai">
