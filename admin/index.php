@@ -234,9 +234,7 @@
             case 'addtocart':
                 if(isset($_POST['themsp'])&&($_POST['themsp'])){
                     $ma_sp = $_POST['id_san_pham'];
-                    // echo $ma_sp;
                     $tt_san_pham = sua_sanpham($ma_sp);
-                    // var_dump($tt_san_pham);
                     $hinh = "upload/".$tt_san_pham['hinh_anh_sp'];
                     $ten = $tt_san_pham['ten_sp'];
                     $dongia = $tt_san_pham['giam_gia_sp'];
@@ -249,6 +247,43 @@
                 }
                 $list_sp = show_sp(); 
                 include 'donhang/add.php';
+                break;
+            case 'sanphamct':
+                if(isset($_GET['id_san_pham']) && $_GET['id_san_pham']>0){
+                    $ma_sp = $_POST['id_san_pham'];
+                    $tt_san_pham = sua_sanpham($ma_sp);
+                    include "donhang/add.php";
+                }
+            case 'sanphamct_gia1':
+                if(isset($_POST['themsp'])){
+                    $thong_so = $_GET['thong_so'];
+                    $ma_sp = $_POST['id_san_pham'];
+                    $tt_san_pham = sua_sanpham($ma_sp);
+                    $dongia = $tt_san_pham['giam_gia_sp']+=500000;
+                    include "donhang/add.php";
+                }
+                $list_sp = show_sp(); 
+                break;
+            case 'sanphamct_gia2':
+                if(isset($_POST['themsp'])&&($_POST['themsp'])){
+                    $thong_so = $_GET['thong_so'];
+                    $ma_sp = $_POST['id_san_pham'];
+                    $tt_san_pham = sua_sanpham($ma_sp);
+                    $dongia = $tt_san_pham['giam_gia_sp']+=500000;
+                    include "donhang/add.php";
+                }
+                $list_sp = show_sp(); 
+                include "donhang/add.php";
+                break;
+            case 'sanphamct_gia3':
+                {
+                    $thong_so = $_GET['thong_so'];
+                    $ma_sp = $_POST['id_san_pham'];
+                    $tt_san_pham = sua_sanpham($ma_sp);
+                    $onesp['gia_sp']+=1000000;
+                    $onesp['giam_gia_sp']+=1000000;
+                    include "donhang/add.php";
+                }
                 break;
             case 'delete_cart':
                 if(isset($_GET['id'])){

@@ -1,5 +1,5 @@
 <div class="content">
-    <form action="index.php?act=billconfirm" method="POST" class="bill">
+    <form action="index.php?act=billconfirm" method="POST" class="bill" id="bill">
         <div class="giohang">
             <h3>Thông tin đặt hàng</h3>
             <table>

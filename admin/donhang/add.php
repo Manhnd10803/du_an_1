@@ -1,26 +1,31 @@
 <div class="chon_sp">
-<form action="index.php?act=addtocart" method="post">
-            <label for="">Thêm sản phẩm</label>
+<form action="index.php?act=addtocart" method="post" id="them_sp_admin">
+            <label for="">Chọn sản phẩm</label>
             <select name="id_san_pham">
                 <?php foreach($list_sp as $sp){
                 ?> 
                 <option value="<?php echo $sp['ma_sp']?>"><?php echo $sp['ten_sp']?></option>
                 <?php }?>
             </select>
-
-            <div class="gio_hang_chon_mau">
+            <div class="gio_hang_chon_mau" id="gio_hang_chon_mau">
                 <p>Chọn màu :</p>
-                        <input type="radio" name="mau_sac" value="Vàng" class="input_mau" required> <p class="mau_label" for="">Vàng</p>
-                        <input type="radio" name="mau_sac" value="Bạc" class="input_mau" required> <p class="mau_label" for="">Bạc</p>
-                        <input type="radio" name="mau_sac" value="Xám" class="input_mau" required> <p class="mau_label" for="">Xám</p>
+                        <input type="radio" name="mau_sac" value="Vàng" class="input_mau" required> <label class="mau_label" for="">Vàng</label>
+                        <input type="radio" name="mau_sac" value="Bạc" class="input_mau" required> <label class="mau_label" for="">Bạc</label>
+                        <input type="radio" name="mau_sac" value="Xám" class="input_mau" required> <label class="mau_label" for="">Xám</label>
             </div>
             <div class="gio_hang_chon_mau">
-                        <p>Chọn bộ nhớ trong : </p>
-                        <input type="radio" name="thong_so" value="Bản 128GB"  class="input_mau" required> <p class="mau_label" for="">Bản 128GB</p>
-                            <input type="radio" name="thong_so" value="Bản 256GB"  class="input_mau" required> <p class="mau_label" for="">Bản 256GB</p>
-                            <input type="radio" name="thong_so" value="Bản 512GB" class="input_mau" required> <p class="mau_label" for="">Bản 512GB</p>
+            <p>Chọn bộ nhớ trong : </p>
+                            <a href="index.php?act=sanphamct_gia1&id=<?php echo $tt_san_pham['ma_sp']?>&thong_so=128">
+                                <input type="radio" name="thong_so" value="Bản 128GB" class="input_mau" required <?php if(isset($thong_so) && $thong_so==128){echo "checked";} ?>> <label class="mau_label" for="">Bản 128GB</label>
+                            </a> 
+                            <a href="index.php?act=sanphamct_gia2&id=<?php echo $tt_san_pham['ma_sp']?>&thong_so=256">
+                                <input type="radio" name="thong_so" value="Bản 256GB" class="input_mau" required <?php if(isset($thong_so) && $thong_so==256){echo "checked";} ?> > <label class="mau_label" for="">Bản 256GB</label>
+                            </a> 
+                            <a href="index.php?act=sanphamct_gia3&id=<?php echo $tt_san_pham['ma_sp']?>&thong_so=512">
+                                <input type="radio" name="thong_so" value="Bản 512GB" class="input_mau" required <?php if(isset($thong_so) && $thong_so==512){echo "checked";} ?> > <label class="mau_label" for="">Bản 512GB</label>
+                            </a>
             </div>
-            <input type="submit" name="themsp" value="Thêm vào giỏ hàng" class="button">
+            <input type="submit" id="themsp" name="themsp" value="Thêm vào giỏ hàng" class="button">
         </form>
 </div>
 <div class="content">

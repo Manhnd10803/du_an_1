@@ -422,9 +422,25 @@ h4:hover{
 .gio_hang_chon_mau {
     display: flex;
 }
-.ten_sp {
-    display: flex;
-    border-bottom: 2px solid red;
-    padding-top: 10px;
-    padding-bottom: 10px;
+#bill {
+    width: 100%;
+}
+#themsp {
+    width: 20%;
+}
+#them_sp_admin {
+    padding: 0;
+    
+}
+#gio_hang_chon_mau .mau_label {
+    margin: 0;
+    margin-right: 10px;
+}
+#gio_hang_chon_mau input {
+    margin-right: 5px;
+}
+#gio_hang_chon_mau p {
+    margin: 0;
+    margin-right: 5px;
+
 }
