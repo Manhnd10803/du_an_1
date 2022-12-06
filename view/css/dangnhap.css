@@ -3,6 +3,12 @@ header{
     justify-content: space-between;
 }
 .dangnhap{
+    /* để không bị nháy nháy */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /*  */
     width: 600px;
     /* height: 585px; */
     /* border: 1px solid black; */
@@ -76,3 +82,15 @@ header{
     padding-bottom: 10px;
 }
 
+.dangnhap .B span{
+    color: red;
+    padding-bottom: 10px;
+}
+
+form input:focus{
+    outline: none;
+    /* border-color:  #d70018; */
+    box-shadow: 0 0 3px  #d70018 ;
+    border: 2px solid red;
+    
+}

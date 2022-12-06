@@ -1,45 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Đăng nhập</title>
     <!--Font awesome-->
-    <script src="https://kit.fontawesome.com/3c4fa98e07.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/3c4fa98e07.js"
+      crossorigin="anonymous"
+    ></script>
     <!--Google font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Zen+Tokyo+Zoo&display=swap"
+      rel="stylesheet"
+    />
     <!--CSS-->
-    <link rel="stylesheet" href="view/css/style.css">
-    <link rel="stylesheet" href="view/css/dangnhap.css">
-</head>
-<body>
+    <link rel="stylesheet" href="view/css/style.css" />
+    <link rel="stylesheet" href="view/css/dangnhap.css" />
+    <script>
+      // lấy giá trị của một input
+      function getValue(id) {
+        return document.getElementById(id).value.trim();
+      }
+
+      // hiển thị lỗi
+      function showError(key, mess) {
+        document.getElementById(key + "_error").innerHTML = mess;
+      }
+
+      function validate() {
+        let flag = true;
+
+        // tai khoan
+        let username = getValue("username");
+        if (
+          username == "" ||
+          username.length < 5 ||
+          !/^[a-zA-Z0-9]+$/.test(username)
+        ) {
+          flag = false;
+          showError("username", "Vui lòng kiểm tra lại tài khoản* ");
+        }
+        // mat khau
+        let password = getValue("password");
+        if (
+          password == "" ||
+          password.length < 5 ||
+          !/^[a-zA-Z0-9]+$/.test(password)
+        ) {
+          flag = false;
+          showError("password", "Vui lòng kiểm tra lại password* ");
+        }
+        return flag;
+      }
+    </script>
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <a href="index.php">Trở về</a>
-            <a href="" class="logo">XShop</a>
-        </header>
-        <div class="dangnhap">
-            <div class="A">
-                <a href="dangky.html">ĐĂNG KÝ</a>
-                <a href="" class="chon">ĐĂNG NHẬP</a>
-            </div>
-            <div class="B">
-                <form action="" method="post">
-                    <input type="text" placeholder="Email/Số điện thoại">
-                    <input type="text" placeholder="Nhập mật khẩu">
-                    <div class="C">
-                        <a href="">Quên mật khẩu?</a>
-                        <a href="">Đăng nhập với SMS</a>
-                    </div>
-                    <div class="D">
-                        <a href=""><input type="submit" value="Đăng nhập >"></a>
-                    </div>
-                </form>
-            </div>
+      <header>
+        <a href="index.php">Trở về</a>
+        <a href="" class="logo">XShop</a>
+      </header>
+      <div class="dangnhap">
+        <div class="A">
+          <a href="dangky.html">ĐĂNG KÝ</a>
+          <a href="" class="chon">ĐĂNG NHẬP</a>
         </div>
+        <div class="B">
+          <form action="" method="post">
+            <input
+              type="text"
+              name="username"
+              id="username"
+              
+              placeholder="Email/Số điện thoại"
+            />
+            <span id="username_error"></span>
+            <!--  -->
+            <input type="text" placeholder="Nhập mật khẩu" />
+            <div class="C">
+              <a href="">Quên mật khẩu?</a>
+              <a href="">Đăng nhập với SMS</a>
+            </div>
+            <div class="D">
+              <a href=""><input type="submit" onclick="return validate()" value="Đăng nhập >" /></a>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
