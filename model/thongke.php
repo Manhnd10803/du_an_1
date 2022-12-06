@@ -1,7 +1,8 @@
 <?php
 function top_sp_buy()
 {
-    $sql = "select count(cart.ma_sp) as sl_sp, ma_sp, ten_sp from cart group by cart.ma_sp LIMIT 5";
+    $sql = "select count(cart.ma_sp) as sl_sp, ma_sp, ten_sp from cart group by cart.ma_sp ORDER BY `sl_sp` DESC LIMIT 5
+    ";
     return pdo_query($sql);
 }
 function loadall_thongke()
@@ -11,7 +12,7 @@ function loadall_thongke()
     return $listtk;
 }
 function doanhthu_ngay(){
-    $sql = "SELECT sum(bill.bill_tong_tien) as tong, bill.bill_ngay_dat as ngay from bill group by bill.bill_ngay_dat ORDER BY sum(bill.bill_tong_tien) DESC LIMIT 7";
+    $sql = "SELECT sum(bill.bill_tong_tien) as tong, bill.bill_ngay_dat as ngay from bill group by bill.bill_ngay_dat desc LIMIT 7";
     return pdo_query($sql);
 }
 ?>

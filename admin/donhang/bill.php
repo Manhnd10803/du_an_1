@@ -50,8 +50,6 @@
                 <div style="display:flex; flex-direction: column; padding: 10px;">
                     <label for="">Họ và tên</label>
                     <input type="text" name="hoten" value="" required>
-                    <label for="">Địa chỉ</label>
-                    <input type="text" name="diachi" value="" required>
                     <label for="">Email</label>
                     <input type="text" name="email" value="" required>
                     <label for="">Số điện thoại</label>

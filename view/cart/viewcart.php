@@ -26,7 +26,7 @@
                         $ttien+=$cart['4'];
                     ?>
                     <tr>
-                        <td><input type="checkbox"></td>
+                        <td></td>
                         <td><img src="<?php echo $cart['0']?>" alt="" style="height: 200%;"></td>
                         <td><?php echo $cart['1']?></td>
                         <td><?php echo $cart['2']?></td>

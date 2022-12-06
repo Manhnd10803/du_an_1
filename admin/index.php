@@ -161,7 +161,6 @@
                 $list_tk = loadall_tk();
                 include 'taikhoan/list.php';
                 break;
-            // Controller binh luan
             
             //Controller binh luan
             case 'listbl':
@@ -176,7 +175,6 @@
                 include 'binhluan/list.php';
                 break;
 
-            
             // Controller đơn hàng
             case 'listdh':
                 if(isset($_POST['OK'])){
@@ -217,35 +215,26 @@
                     include 'donhang/detail.php';
                 }
                 break;
-            case 'themdh':
-                if(isset($_POST['themmoi'])){
-                    $tenkh = $_POST['tenkh'];
-                    $sdt = $_POST['sdt'];
-                    $diachi = $_POST['diachi'];
-                    $giatri = $_POST['giatri'];
-                    $ttdh = $_POST['ttdh'];
-                    $ma_tk = $_SESSION['user']['ma_tk'];
-                    add_bill($tenkh, $sdt, $diachi, $giatri, $ttdh, $ma_tk);
-                    header("Location:index.php?act=listdh");
-                }
-                $list_sp = show_sp(); 
-                include 'donhang/add.php';
-                break;
             case 'addtocart':
                 if(isset($_POST['themsp'])&&($_POST['themsp'])){
                     $ma_sp = $_POST['id_san_pham'];
                     $tt_san_pham = sua_sanpham($ma_sp);
                     $hinh = "upload/".$tt_san_pham['hinh_anh_sp'];
                     $ten = $tt_san_pham['ten_sp'];
-                    $dongia = $tt_san_pham['giam_gia_sp'];
-                    $soluong = 1;
-                    $thanhtien = $dongia * $soluong;
                     $mau_sac = $_POST['mau_sac'];
                     $thong_so = $_POST['thong_so'];
+                    $dongia = $tt_san_pham['giam_gia_sp'];
+                    if($thong_so=="Bản 256GB"){
+                        $dongia += 500000;
+                    }else if($thong_so=="Bản 512GB"){
+                        $dongia += 1000000;
+                    }
+                    $soluong = 1;
+                    $thanhtien = $dongia * $soluong;
                     $array_pro = [$hinh, $ten, $dongia, $soluong, $thanhtien, $ma_sp, $mau_sac, $thong_so];
                     array_push($_SESSION['mycart'], $array_pro);
                 }
-                $list_sp = show_sp(); 
+                $list_sp = show_sp();
                 include 'donhang/add.php';
                 break;
             case 'sanphamct':
@@ -254,37 +243,6 @@
                     $tt_san_pham = sua_sanpham($ma_sp);
                     include "donhang/add.php";
                 }
-            case 'sanphamct_gia1':
-                if(isset($_POST['themsp'])){
-                    $thong_so = $_GET['thong_so'];
-                    $ma_sp = $_POST['id_san_pham'];
-                    $tt_san_pham = sua_sanpham($ma_sp);
-                    $dongia = $tt_san_pham['giam_gia_sp']+=500000;
-                    include "donhang/add.php";
-                }
-                $list_sp = show_sp(); 
-                break;
-            case 'sanphamct_gia2':
-                if(isset($_POST['themsp'])&&($_POST['themsp'])){
-                    $thong_so = $_GET['thong_so'];
-                    $ma_sp = $_POST['id_san_pham'];
-                    $tt_san_pham = sua_sanpham($ma_sp);
-                    $dongia = $tt_san_pham['giam_gia_sp']+=500000;
-                    include "donhang/add.php";
-                }
-                $list_sp = show_sp(); 
-                include "donhang/add.php";
-                break;
-            case 'sanphamct_gia3':
-                {
-                    $thong_so = $_GET['thong_so'];
-                    $ma_sp = $_POST['id_san_pham'];
-                    $tt_san_pham = sua_sanpham($ma_sp);
-                    $onesp['gia_sp']+=1000000;
-                    $onesp['giam_gia_sp']+=1000000;
-                    include "donhang/add.php";
-                }
-                break;
             case 'delete_cart':
                 if(isset($_GET['id'])){
                     array_splice($_SESSION['mycart'], $_GET['id'], 1);
@@ -295,12 +253,12 @@
                 header('Location: index.php?act=addtocart');
                 break;
             case 'bill':
-                    include 'donhang/bill.php';
+                include 'donhang/bill.php';
                 break;    
             case 'billconfirm':
                 if(isset($_POST['submit'])){
                     $hoten = $_POST['hoten'];
-                    $diachi = $_POST['diachi'];
+                    $diachi = "Khách hàng mua trực tiếp";
                     $email = $_POST['email'];
                     $sdt = $_POST['sdt'];
                     date_default_timezone_set("Asia/Ho_Chi_Minh");

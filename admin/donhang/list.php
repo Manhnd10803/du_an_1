@@ -26,9 +26,9 @@
                 $soluong = loadall_cart_count($listbill['id']);
             ?>
             <tr>
-                <td><input type="checkbox"></td>
+                <td></td>
                 <td><?php echo "DA1-0001".$listbill['id']?></td>
-                <td><?php echo $listbill['bill_ho_ten'].", ".$listbill['bill_sdt'].", ".$listbill['bill_dia_chi']?></td>
+                <td><?php echo $listbill['bill_ho_ten']?></td>
                 <td><?php echo $soluong?></td>
                 <td><?php echo $listbill['bill_tong_tien']." đ"?></td>
                 <td><?php if($listbill['bill_trang_thai']==0){echo "Đơn hàng mới";}else if($listbill['bill_trang_thai']==1){echo "Đang xử lý";}else if($listbill['bill_trang_thai']==2){echo "Đang giao hàng";}else if($listbill['bill_trang_thai']==3){echo "Đã giao hàng";} ?></td>
@@ -39,8 +39,8 @@
             ?>
         </tbody>
     </table>
-    <button class="op">Chọn tất cả</button>
-    <button class="op">Bỏ chọn tất cả</button>
-    <button class="op">Xóa các mục đã chọn</button>
-    <a href="index.php?act=themdh"><button class="op">Thêm mới đơn hàng</button></a> 
+    <!-- <button class="op">Chọn tất cả</button> -->
+    <!-- <button class="op">Bỏ chọn tất cả</button> -->
+    <!-- <button class="op">Xóa các mục đã chọn</button> -->
+    <a href="index.php?act=addtocart"><button class="op">Thêm mới đơn hàng</button></a>
 </div>

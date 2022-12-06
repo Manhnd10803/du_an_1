@@ -16,6 +16,7 @@
             <p>Địa chỉ:</p>
             <p>Email:</p>
             <p>Phương thức thanh toán:</p>
+            <p>Ngày đặt hàng:</p>
         </div>
         <div class="phai">
             <p>DA1-0001<?php echo $dh['id']?></p>
@@ -24,6 +25,7 @@
             <p><?php echo $dh['bill_dia_chi']?></p>
             <p><?php echo $dh['bill_email']?></p>
             <p><?php if(($dh['bill_pttt'])==0){echo "Thanh toán khi nhận hàng";}else if(($dh['bill_pttt'])==1){echo "Đã thanh toán";}?></p>
+            <p><?php echo $dh['bill_ngay_dat']?></p>
         </div>
     </div>
     <table style="margin-top: 20px; background-color: white;">
