@@ -102,6 +102,7 @@
                         $password = $_POST['password'];
                         update_matkhau($email, $password);
                         $thongbao = "Cập nhật mật khẩu mới thành công!";
+                        header('Location:index.php?act=dangnhap');
                     }else{
                         $thongbao2 = "Email không tồn tại!";
                     }
@@ -134,6 +135,7 @@
                     $email = $_POST['email'];
                     insert_taikhoan($username, $password, $name, $email, $dia_chi, $sdt);
                     $thongbao = "Đã đăng ký thành công!";
+                    header('Location:index.php?act=dangnhap');
                 }
                 include "view/taikhoan/dangky.php";
                 break;
