@@ -90,6 +90,8 @@
         if(isset($_SESSION['user'])){
             $check_binh_luan = check_binh_luan($_SESSION['user']['ma_tk'], $ma_sp);
             if(is_array($check_binh_luan)){
+                $check_binh_luan2 = check_binh_luan2($_SESSION['user']['ma_tk'], $ma_sp);
+                if(!is_array($check_binh_luan2)){
             ?>
                 <form action="<?=$_SERVER['PHP_SELF'];?>" method="post">
                 <!-- $_SERVER['PHP_SELF'] Trả về tên file của file đang được chạy. -->
@@ -98,6 +100,13 @@
                     <input type="submit" name="submit" class="submit">
                 </form>
             <?php
+                }else{
+                ?>
+                    <div class="dangnhap_bl">
+                        <p style="color: #EE1E25;">Bạn đã bình luận sản phẩm rồi</p>
+                    </div>
+                <?php    
+                }
             }else {
             ?>
                 <div class="dangnhap_bl">

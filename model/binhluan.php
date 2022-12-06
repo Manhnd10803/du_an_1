@@ -11,6 +11,10 @@
         $sql = "SELECT * FROM `cart` WHERE `ma_sp` = '{$ma_sp}' and `ma_tk` = '{$ma_tk}'";
         return pdo_query_one($sql);
     }
+    function check_binh_luan2($ma_tk, $ma_sp){
+        $sql = "SELECT * FROM `commentary`  WHERE `ma_sp` = '{$ma_sp}' and `ma_tk` = '{$ma_tk}'";
+        return pdo_query_one($sql);
+    }
     function show_all_comment(){
         $sql = "SELECT * FROM `commentary`";
         return pdo_query($sql);
