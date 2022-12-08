@@ -10,8 +10,6 @@
     //code
 
     function validate_email() {
-        
-        
 
         // email
         let email = getValue("email");
@@ -24,7 +22,7 @@
         }
         return flag;
     }
-    // matkhau
+
     function validate_password() {
         // mat khau
         let password = getValue("password");
@@ -38,6 +36,11 @@
         return flag;
 
     }
+
+
+
+
+
 
     // onclick
 
@@ -57,34 +60,28 @@
             showError("password", "*Vui lòng kiểm tra lại mật khẩu");
         }
         // nhập lại mk 
-        let repassword = getValue("repassword");
-        if (password != repassword) {
-            alert("Bạn cần nhập lại mật khẩu vì mật khẩu bạn vừa nhập không trùng với mật khẩu trên");
-            return false;
-        }
+        let password2 = getValue("password2");
+        if (password != password2) {
+            flag = false;
+            alert("sai");
+            // showError("password2", "*Mật khẩu nhập lại sai");
+        } 
+
+
         return flag;
-    }
-    // check mk 
-    function check() {
-        var pass = document.getElementById("password").value
-        var re_pass = document.getElementById("repassword").value
-        if(pass == re_pass){
-            document.getElementById("baoloi").innerHTML = "";
-        }else{
-            document.getElementById("baoloi").innerHTML = "Không trùng mật khẩu!";
-        }
     }
 </script>
 
 
 
 
-<div class="dangnhap" onchange="check()">
+<div class="dangnhap">
     <div class="A">
         <p style="color: #EE1E25; font-size: 20px; font-weight: bold;">Lấy lại tài khoản</p>
     </div>
     <div class="B">
         <form action="index.php?act=quenmk" method="post">
+
             <label for="">Nhập email</label>
             <input type="text" placeholder="Email" name="email" id="email" onchange="return validate_email()">
             <span id="email_error"></span>
@@ -93,11 +90,9 @@
             <input type="password" placeholder="Mật khẩu" name="password" id="password" onchange="return validate_password()">
             <span id="password_error"></span>
 
-
             <label for="">Nhập lại mật khẩu mới</label>
-            <input type="password" placeholder="Mật khẩu" name="repassword" id="repassword">
-            <p style="color: #EE1E25;" id="baoloi"></p>
-            
+            <input type="password" placeholder="Nhập lại mật khẩu" name="password2" id="password2">
+            <!-- <span id="password2_error"></span> -->
 
             <div class="D">
                 <a href=""><input type="submit" value="OK >" onclick="return validate()" name="submit"></a>
