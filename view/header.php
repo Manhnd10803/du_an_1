@@ -36,7 +36,7 @@
                         <li><a href="index.php?act=dangxuat">Đăng xuất</a></li>
                         <?php if($_SESSION['user']['role']==1){
                         ?>
-                        <li><a href="index.php?act=quantri">Quản trị XShop</a></li>
+                        <li><a href="index.php?act=quantri">Quản trị SMobile</a></li>
                         <?php }?>
                     </ul>
                 <?php }else{ ?>
