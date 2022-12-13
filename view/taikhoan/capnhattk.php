@@ -128,7 +128,7 @@
             <label for="">Tên tài khoản</label>
             <input type="text" placeholder="Tên tài khoản" value="<?php echo $taikhoan['ma_tk']?>" disabled>
             <label for="">Mật khẩu</label>
-            <input type="password" placeholder="Mật khẩu" id="password" name="password" value="<?php echo $taikhoan['mat_khau']?>" onchange="return validate_password()" required>
+            <input type="password" placeholder="Mật khẩu" id="password" name="password" value="<?php echo $taikhoan['mat_khau']?>" onchange="return validate_password()" disabled required>
             <span id="password_error"></span>
             <label for="">Nhập lại mật khẩu</label>
             <input type="password" placeholder="Nhập lại mật khẩu" id="repassword" required> 
