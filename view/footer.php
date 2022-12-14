@@ -58,7 +58,7 @@
                     <a href="">Tổng đài hỗ trợ miễn phí</a>
                     <a href="">(Gọi mua - Góp ý - Bảo hành)</a>
                     <a href="">1800.0000 (8:00 - 21:00)</a>
-                    <a href="">Email: Xshop@xshop.com</a>
+                    <a href="">Email: Smobile@smobile.com</a>
                 </div>
             </div>
             <div class="copyright">

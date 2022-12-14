@@ -129,7 +129,6 @@
                 break;
             
             // Controller tai khoan
-
             case 'listtk':
                 $list_tk = loadall_tk();
                 include 'taikhoan/list.php';
@@ -237,12 +236,12 @@
                 $list_sp = show_sp();
                 include 'donhang/add.php';
                 break;
-            case 'sanphamct':
-                if(isset($_GET['id_san_pham']) && $_GET['id_san_pham']>0){
-                    $ma_sp = $_POST['id_san_pham'];
-                    $tt_san_pham = sua_sanpham($ma_sp);
-                    include "donhang/add.php";
-                }
+            // case 'sanphamct':
+            //     if(isset($_GET['id_san_pham']) && $_GET['id_san_pham']>0){
+            //         $ma_sp = $_POST['id_san_pham'];
+            //         $tt_san_pham = sua_sanpham($ma_sp);
+            //         include "donhang/add.php";
+            //     }
             case 'delete_cart':
                 if(isset($_GET['id'])){
                     array_splice($_SESSION['mycart'], $_GET['id'], 1);
@@ -266,7 +265,8 @@
                     $tongdonhang = $_POST['tongtien'];
                     $pttt = $_POST['thanhtoan'];
                     $ma_kh = $_SESSION['user']['ma_tk'];
-                    $idbill = insert_bill($ma_kh, $hoten, $diachi, $sdt, $email, $pttt, $ngaydathang, $tongdonhang);
+                    $trang_thai_dh = 4;
+                    $idbill = insert_bill($ma_kh, $hoten, $diachi, $sdt, $email, $pttt, $ngaydathang, $tongdonhang, $trang_thai_dh);
                     foreach ($_SESSION['mycart'] as $cart){
                         insert_cart($_SESSION['user']['ma_tk'], $cart[5], $cart[0], $cart[1], $cart[2], $cart[3], $cart[4], $cart[6], $cart[7], $idbill);
                     }

@@ -39,7 +39,7 @@
                 <a href="<?php echo $xoatk?>" onclick="check()">
                 <?php
                     if($list_tk['role']==0){
-                       echo '<button class="delete">Xóa</button></a>';
+                        echo '<button class="delete">Xóa</button></a>';
                     }
                     else {
                         echo '<a href="index.php?act=listtk" onclick="check1()"><button class="delete">Xóa</button></a>';

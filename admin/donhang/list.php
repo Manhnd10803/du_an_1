@@ -31,7 +31,7 @@
                 <td><?php echo $listbill['bill_ho_ten']?></td>
                 <td><?php echo $soluong?></td>
                 <td><?php echo $listbill['bill_tong_tien']." đ"?></td>
-                <td><?php if($listbill['bill_trang_thai']==0){echo "Đơn hàng mới";}else if($listbill['bill_trang_thai']==1){echo "Đang xử lý";}else if($listbill['bill_trang_thai']==2){echo "Đang giao hàng";}else if($listbill['bill_trang_thai']==3){echo "Đã giao hàng";} ?></td>
+                <td><?php if($listbill['bill_trang_thai']==0){echo "Đơn hàng mới";}else if($listbill['bill_trang_thai']==1){echo "Đang xử lý";}else if($listbill['bill_trang_thai']==2){echo "Đang giao hàng";}else if($listbill['bill_trang_thai']==3){echo "Đã giao hàng";}else if($listbill['bill_trang_thai']==4){echo "Đã hoàn thành";}else if($listbill['bill_trang_thai']==5){echo "Đã hủy";} ?></td>
                 <td><a href="<?php echo $suadh?>"><button class="update">Sửa</button></a> <a href="<?php echo $xemdh?>"><button class="update">Xem</button></a> </td>
             </tr>
             <?php

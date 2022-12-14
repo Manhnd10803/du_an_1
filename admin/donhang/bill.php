@@ -63,7 +63,7 @@
                 <div class="thanhtoan">
                     <div>
                         <input type="radio" name="thanhtoan" value="0" checked required>
-                        <label for="">Thanh toán khi nhận hàng</label>
+                        <label for="">Thanh toán tiền mặt</label>
                     </div>
                     <div>
                         <input type="radio" name="thanhtoan" value="1" required>

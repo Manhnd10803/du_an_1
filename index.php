@@ -17,6 +17,13 @@
     if(isset($_GET['act']) && ($_GET['act']!="")){
         $act = $_GET['act'];
         switch($act){
+            case 'huydh':
+                if(isset($_GET['id'])){
+                    $id = $_GET['id'];
+                    cancel_order($id);
+                    header('Location:index.php?act=mybill');
+                }
+                break;
             case 'xemdh':
                 if(isset($_GET['id'])){
                     $id = $_GET['id'];
@@ -44,7 +51,8 @@
                     $tongdonhang = $_POST['tongtien'];
                     $pttt = $_POST['thanhtoan'];
                     $ma_kh = $_SESSION['user']['ma_tk'];
-                    $idbill = insert_bill($ma_kh, $hoten, $diachi, $sdt, $email, $pttt, $ngaydathang, $tongdonhang);
+                    $trang_thai_dh = 0;
+                    $idbill = insert_bill($ma_kh, $hoten, $diachi, $sdt, $email, $pttt, $ngaydathang, $tongdonhang, $trang_thai_dh);
                     foreach ($_SESSION['mycart'] as $cart){
                         insert_cart($_SESSION['user']['ma_tk'], $cart[5], $cart[0], $cart[1], $cart[2], $cart[3], $cart[4], $cart[6], $cart[7], $idbill);
                     }

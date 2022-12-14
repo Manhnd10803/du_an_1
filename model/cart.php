@@ -1,6 +1,6 @@
 <?php
-    function insert_bill($ma_kh, $hoten, $diachi, $sdt, $email, $pttt, $ngaydathang, $tongdonhang){
-        $sql = "INSERT INTO `bill` (`ma_tk`, `bill_ho_ten`, `bill_dia_chi`, `bill_sdt`, `bill_email`, `bill_pttt`, `bill_ngay_dat`, `bill_tong_tien`) VALUES ('$ma_kh', '$hoten', '$diachi', '$sdt', '$email', '$pttt', '$ngaydathang', '$tongdonhang')";
+    function insert_bill($ma_kh, $hoten, $diachi, $sdt, $email, $pttt, $ngaydathang, $tongdonhang, $bill_tt){
+        $sql = "INSERT INTO `bill` (`bill_ho_ten`, `bill_dia_chi`, `bill_sdt`, `bill_email`, `bill_pttt`, `bill_ngay_dat`, `bill_tong_tien`, `bill_trang_thai`, `ma_tk`) VALUES ('$hoten', '$diachi', '$sdt', '$email', '$pttt', '$ngaydathang', '$tongdonhang', '$bill_tt', '$ma_kh')";
         return pdo_execute_return_lastInsertId($sql);
     }
     function insert_cart($ma_kh, $ma_hh, $img, $name, $price, $soluong, $thanhtien, $mau_sac, $thong_so, $idbill){
@@ -41,10 +41,6 @@
         $bill = pdo_query($sql);
         return sizeof($bill);
     }
-    function add_bill($tenkh, $sdt, $diachi, $giatri, $ttdh, $ma_tk){
-        $sql = "INSERT INTO `bill` (`bill_ho_ten`, `bill_sdt`, `bill_dia_chi`, `bill_tong_tien`, `bill_trang_thai`, `ma_tk`) VALUES ('$tenkh', '$sdt', '$diachi', '$giatri', '$ttdh', '$ma_tk')";
-        pdo_execute($sql);
-    }
     function delete_bill($id_bill){
         $sql = "DELETE FROM cart WHERE `cart`.`id_bill` = {$id_bill}";
         $sql2 = "DELETE FROM bill WHERE `bill`.`id` = {$id_bill}";
@@ -53,6 +49,10 @@
     }
     function update_bill($tenkh, $sdt, $diachi, $giatri, $ttdh, $id){
         $sql = "UPDATE `bill` SET `bill_ho_ten` = '$tenkh', `bill_dia_chi` = '$diachi', `bill_sdt` = '$sdt', `bill_tong_tien` = '$giatri', `bill_trang_thai` = '$ttdh' WHERE `bill`.`id` = {$id}";
+        pdo_execute($sql);
+    }
+    function cancel_order($id){
+        $sql = "UPDATE `bill` SET `bill_trang_thai` = '5' WHERE `bill`.`id` = $id";
         pdo_execute($sql);
     }
 ?>

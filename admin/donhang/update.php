@@ -25,6 +25,8 @@
                 <option value="1" <?php if ($dh['bill_trang_thai'] == 1){echo "selected";}?> <?php if($dh['bill_trang_thai']>1){echo "disabled";}?> >Đang xử lý</option>
                 <option value="2" <?php if ($dh['bill_trang_thai'] == 2){echo "selected";}?> <?php if($dh['bill_trang_thai']>2){echo "disabled";}?> >Đang giao hàng</option>
                 <option value="3" <?php if ($dh['bill_trang_thai'] == 3){echo "selected";}?> <?php if($dh['bill_trang_thai']>3){echo "disabled";}?> >Đã giao hàng</option>
+                <option value="4" <?php if ($dh['bill_trang_thai'] == 4){echo "selected";}?> <?php if($dh['bill_trang_thai']>4){echo "disabled";}?> >Đã hoàn thành</option>
+                <option value="5" <?php if ($dh['bill_trang_thai'] == 5){echo "selected";}?> <?php if($dh['bill_trang_thai']>5){echo "disabled";}?> >Đã hủy</option>
             </select>
             <div class="funtion-button">
                 <input type="submit" name="capnhat" value="Cập nhật" class="button">
