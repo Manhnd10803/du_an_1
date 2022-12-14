@@ -18,7 +18,6 @@
     </form>
     <table>
         <thead>
-            <th class="border-top-left ml-10"></th>
             <th>MÃ SẢN PHẨM</th>
             <th>TÊN SẢN PHẨM</th>
             <th>ĐƠN GIÁ</th>
@@ -35,7 +34,6 @@
                 $xoasp = "index.php?act=xoasp&id=".$sanpham['ma_sp'];
             ?>
             <tr>
-                <td><input type="checkbox"></td>
                 <td><?php echo $sanpham['ma_sp']?></td>
                 <td><?php echo $sanpham['ten_sp']?></td>
                 <td><?php echo $sanpham['gia_sp']?></td>
@@ -50,8 +48,5 @@
             ?>
         </tbody>
     </table>
-    <button class="op">Chọn tất cả</button>
-    <button class="op">Bỏ chọn tất cả</button>
-    <button class="op">Xóa các mục đã chọn</button>
     <a href="index.php?act=addsp"><button class="op">Nhập thêm</button></a>
 </div>

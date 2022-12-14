@@ -7,7 +7,7 @@
     <h3>Danh sách tài khoản</h3>
     <table>
         <thead>
-            <th class="border-top-left ml-10"></th>
+
             <th>TÊN ĐĂNG NHẬP</th>
             <th>MẬT KHẨU</th>
             <th>HỌ VÀ TÊN</th>
@@ -24,7 +24,7 @@
                 $xoatk = "index.php?act=xoatk&id=".$list_tk['ma_tk'];
             ?>
             <tr>
-                <td><input type="checkbox"></td>
+
                 <td><?php echo $list_tk['ma_tk']?></td>
                 <td><?php echo $list_tk['mat_khau']?></td>
                 <td><?php echo $list_tk['ho_ten']?></td>
@@ -50,8 +50,5 @@
             ?>
         </tbody>
     </table>
-    <button class="op">Chọn tất cả</button>
-    <button class="op">Bỏ chọn tất cả</button>
-    <button class="op">Xóa các mục đã chọn</button>
     <!-- <a href="index.php?act=addtk"><button class="op">Nhập thêm</button></a> -->
 </div>
