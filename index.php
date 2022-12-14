@@ -154,7 +154,11 @@
                     $checktk = check_taikhoan($username, $password);
                     if(is_array($checktk)){
                         $_SESSION['user'] = $checktk;
-                        header('Location: index.php');
+                        if($_SESSION['user']['role']==1) {
+                            header('Location: admin/index.php');
+                        }else {
+                            header('Location: index.php');
+                        }           
                     }else{
                         $thongbao2 = "Tài khoản không tồn tại!";
                     }
