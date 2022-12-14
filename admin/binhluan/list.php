@@ -16,7 +16,7 @@
                 $xoadm = "index.php?act=xoabl&ma_bl=".$list_bl['ma_bl'];
             ?>
             <tr>
-                <td><input type="checkbox"></td>
+              
                 <td><?php echo $list_bl['ma_bl']?></td>
                 <td><?php echo $list_bl['noi_dung']?></td>
                 <td><?php echo $list_bl['ma_sp']?></td>
@@ -29,7 +29,5 @@
             ?>
         </tbody>
     </table>
-    <button class="op">Chọn tất cả</button>
-    <button class="op">Bỏ chọn tất cả</button>
-    <button class="op">Xóa các mục đã chọn</button>
+   
 </div>
