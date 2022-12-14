@@ -1,7 +1,4 @@
 <script>
-    function check() {
-        alert("Bạn chắc chắn muốn xóa tài khoản này!");
-    }
     function check1() {
         alert("Không được phép xóa tài khoản admin !");
     }
@@ -36,7 +33,7 @@
                 <td><?php echo $list_tk['email']?></td>
                 <td><?php if($list_tk['role']==0){echo "Khách hàng";}else if($list_tk['role']==1){echo "Quản trị";}?></td>
                 <td><a href="<?php echo $suatk?>"><button class="update">Sửa</button></a>
-                <a href="<?php echo $xoatk?>" onclick="check()">
+                <a href="<?php echo $xoatk?>" onclick="return confirm('Bạn có chắc chắn xóa?')">
                 <?php
                     if($list_tk['role']==0){
                        echo '<button class="delete">Xóa</button></a>';
