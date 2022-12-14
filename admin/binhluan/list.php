@@ -2,7 +2,7 @@
     <h3>Danh sách bình luận</h3>
     <table>
         <thead>
-            <th class="border-top-left ml-10"></th>
+           
             <th>MÃ BÌNH LUẬN</th>
             <th>NỘI DUNG</th>
             <th>MÃ HÀNG HÓA</th>
