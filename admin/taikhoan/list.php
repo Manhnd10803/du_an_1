@@ -8,7 +8,7 @@
     <table>
         <thead>
 
-            <th>TÊN ĐĂNG NHẬP</th>
+            <th class="border-top-left">TÊN ĐĂNG NHẬP</th>
             <th>MẬT KHẨU</th>
             <th>HỌ VÀ TÊN</th>
             <th>ĐỊA CHỈ</th>

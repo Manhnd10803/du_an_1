@@ -1,9 +1,8 @@
 <div class="content">
     <h3 class="mb-50">Danh sách loại sản phẩm</h3>
     <table>
-        <thead>
-            
-            <th>MÃ LOẠI</th>
+        <thead> 
+            <th class="border-top-left">MÃ LOẠI</th>
             <th>TÊN LOẠI</th>
             <!-- <th>ICON</th> -->
             <th class="border-top-right">THAO TÁC</th>

@@ -18,7 +18,7 @@
     </form>
     <table>
         <thead>
-            <th>MÃ SẢN PHẨM</th>
+            <th class="border-top-left">MÃ SẢN PHẨM</th>
             <th>TÊN SẢN PHẨM</th>
             <th>ĐƠN GIÁ</th>
             <th>GIẢM GIÁ</th>
