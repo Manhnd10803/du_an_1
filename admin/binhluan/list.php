@@ -2,7 +2,6 @@
     <h3>Danh sách bình luận</h3>
     <table>
         <thead>
-           
             <th>MÃ BÌNH LUẬN</th>
             <th>NỘI DUNG</th>
             <th>MÃ HÀNG HÓA</th>
@@ -16,7 +15,6 @@
                 $xoadm = "index.php?act=xoabl&ma_bl=".$list_bl['ma_bl'];
             ?>
             <tr>
-              
                 <td><?php echo $list_bl['ma_bl']?></td>
                 <td><?php echo $list_bl['noi_dung']?></td>
                 <td><?php echo $list_bl['ma_sp']?></td>
@@ -29,5 +27,4 @@
             ?>
         </tbody>
     </table>
-   
 </div>

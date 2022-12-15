@@ -171,6 +171,7 @@
                     $ma_bl = $_GET['ma_bl'];
                     delete_comment($ma_bl);
                 }
+                $list_bl = show_all_comment();
                 include 'binhluan/list.php';
                 break;
 
@@ -231,7 +232,26 @@
                     $soluong = 1;
                     $thanhtien = $dongia * $soluong;
                     $array_pro = [$hinh, $ten, $dongia, $soluong, $thanhtien, $ma_sp, $mau_sac, $thong_so];
-                    array_push($_SESSION['mycart'], $array_pro);
+                    if($_SESSION['mycart']!=[]){
+                        $test = 0;
+                        foreach($_SESSION['mycart'] as $key => $cart){
+                            if($array_pro[5]==$cart[5] && $array_pro[6]==$cart[6] && $array_pro[7]==$cart[7]){
+                                $cart[3] = $cart[3]+1;
+                                $_SESSION['mycart'][$key][3]+=1;
+                                $_SESSION['mycart'][$key][4] = $_SESSION['mycart'][$key][2] * $_SESSION['mycart'][$key][3];
+                                $test = 0;
+                                break;
+                            }else{
+                                $test = 1;
+                            }
+                        }
+                        if($test==1){
+                            array_push($_SESSION['mycart'], $array_pro);
+                        }
+                    }
+                    else{
+                        array_push($_SESSION['mycart'], $array_pro);
+                    }
                 }
                 $list_sp = show_sp();
                 include 'donhang/add.php';

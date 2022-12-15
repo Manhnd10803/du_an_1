@@ -1,16 +1,3 @@
-<!-- <script>
-    function check() {
-        var pass = document.getElementById("password").value
-        var re_pass = document.getElementById("repassword").value
-        if(pass == re_pass){
-            document.getElementById("baoloi").innerHTML = "";
-        }else{
-            document.getElementById("baoloi").innerHTML = "Không trùng mật khẩu!";
-        }
-    }
-</script> -->
-
-
 <script>
     function getValue(id) {
         return document.getElementById(id).value.trim();
@@ -31,7 +18,7 @@
             showError("username", "");
         }
 
-        return flag;
+        // return flag;
     }
     // matkhau
     function validate_password() {
@@ -44,8 +31,21 @@
         } else {
             showError("password", "");
         }
-        return flag;
+        // return flag;
 
+    }
+    //repass
+    function validate_repassword() {
+        // mat khau
+        let repassword = getValue("repassword");
+        let password = getValue("password");
+        if (repassword == "" || repassword != password) {
+            flag = false;
+            showError("repassword", "*Vui lòng kiểm tra lại mật khẩu");
+        } else {
+            showError("repassword", "");
+        }
+        // return flag;
     }
     // họ và tên
     function validate_name() {
@@ -56,7 +56,7 @@
         } else {
             showError("name", "");
         }
-        return flag;
+        // return flag;
     }
     //email
     function validate_email() {
@@ -68,19 +68,19 @@
         } else {
             showError("email", "");
         }
-        return flag;
+        // return flag;
     }
     // địa chỉ
     function validate_dia_chi() {
         let dia_chi = getValue("dia_chi");
 
-        if (dia_chi == "") {
+        if (dia_chi == "" || dia_chi.length < 3) {
             flag = false;
             showError("dia_chi", "*Vui lòng kiểm tra lại địa chỉ");
         } else {
             showError("dia_chi", "");
         }
-        return flag;
+        // return flag;
     }
     // số điện thoại
     function validate_sdt() {
@@ -92,18 +92,20 @@
         } else {
             showError("sdt", "");
         }
-        return flag;
+        // return flag;
     }
     // onclick
     function validate() {
         // validate_taikhoan();
         // validate_password();
-        let flag = true;
+        let flag = false;
         // tai khoan
         let username = getValue("username");
         if (username == "" || username.length < 5 || !/^[a-zA-Z0-9]+$/.test(username)) {
             flag = false;
             showError("username", "*Vui lòng kiểm tra lại tài khoản");
+        }else{
+            flag = true;
         }
         // mat khau
         let password = getValue("password");
@@ -111,31 +113,41 @@
             !/^[a-zA-Z0-9]+$/.test(password)) {
             flag = false;
             showError("password", "*Vui lòng kiểm tra lại mật khẩu");
+        }else{
+            flag = true;
         }
         // nhập lại mk 
         let repassword = getValue("repassword");
-        if (password != repassword) {
-            alert("Bạn cần nhập lại mật khẩu vì mật khẩu bạn vừa nhập không trùng với mật khẩu trên");
-            return false;
+        if (password != repassword || repassword=="") {
+            flag = false;
+            // alert("Bạn cần nhập lại mật khẩu vì mật khẩu bạn vừa nhập không trùng với mật khẩu trên");
+            showError("password", "*Vui lòng kiểm tra lại mật khẩu");
+        }else{
+            flag = true;
         }
         // họ và tên
         let name = getValue("name");
         if (name == "" || name.length < 5) {
             flag = false;
             showError("name", "*Vui lòng kiểm tra lại Tên");
+        }else{
+            flag = true;
         }
         //email
         let email = getValue("email");
         if (email == "" || email.length < 5 || regex_email.test(email) == false) {
             flag = false;
             showError("email", "*Vui lòng kiểm tra lại email");
+        }else{
+            flag = true;
         }
         //địa chỉ
         let dia_chi = getValue("dia_chi");
-
         if (dia_chi == "") {
             flag = false;
             showError("dia_chi", "*Vui lòng kiểm tra lại địa chỉ");
+        }else{
+            flag = true;
         }
         // số điện thoại
         let sdt = getValue("sdt");
@@ -143,11 +155,15 @@
         if (sdt == "" || sdt_regex.test(sdt) == false) {
             flag = false;
             showError("sdt", "*Vui lòng kiểm tra lại số điện thoại");
+        }else{
+            flag = true;
         }
-
-        return flag;
-
-
+        if(flag == true){
+            alert('Đăng ký thành công!');
+            return true;
+        }else{
+            return false;
+        }
     }
 </script>
 <div class="dangnhap">
@@ -157,25 +173,25 @@
     </div>
     <div class="B" onchange="check()">
         <form action="index.php?act=dangky" method="post">
-            <input type="text" placeholder="Tên tài khoản" name="username" id="username" onchange="return validate_taikhoan()">
+            <input type="text" placeholder="Tên tài khoản" name="username" id="username" onchange="validate_taikhoan()">
             <span id="username_error"></span>
 
-            <input type="password" placeholder="Mật khẩu" name="password" id="password" onchange="return validate_password()">
+            <input type="password" placeholder="Mật khẩu" name="password" id="password" onchange="validate_password()">
             <span id="password_error"></span>
 
-            <input type="password" placeholder="Nhập lại mật khẩu" name="repassword" id="repassword">
+            <input type="password" placeholder="Nhập lại mật khẩu" name="repassword" id="repassword" onchange="validate_repassword()">
+            <span id="repassword_error"></span>
 
-
-            <input type="text" placeholder="Họ Và Tên" name="name" id="name" onchange="return validate_name()">
+            <input type="text" placeholder="Họ Và Tên" name="name" id="name" onchange="validate_name()">
             <span id="name_error"></span>
 
-            <input type="email" placeholder="Email" name="email" id="email" onchange="return validate_email()">
+            <input type="email" placeholder="Email" name="email" id="email" onchange="validate_email()">
             <span id="email_error"></span>
 
-            <input type="text" placeholder="Địa chỉ" name="dia_chi" id="dia_chi" onchange="return validate_dia_chi()">
+            <input type="text" placeholder="Địa chỉ" name="dia_chi" id="dia_chi" onchange="validate_dia_chi()">
             <span id="dia_chi_error"></span>
 
-            <input type="text" placeholder="Số điện thoại" name="sdt" id="sdt" onchange=" return validate_sdt()">
+            <input type="text" placeholder="Số điện thoại" name="sdt" id="sdt" onchange="validate_sdt()">
             <span id="sdt_error"></span>
             <div class="D">
                 <a href=""><input type="submit" value="Đăng ký >" onclick="return validate()" name="submit"></a>
